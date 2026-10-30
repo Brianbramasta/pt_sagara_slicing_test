@@ -1,6 +1,6 @@
 export const VerifyOtpPage: React.FC = () => {
   return (
-    <div className="w-full max-w-[420px] px-6 pt-24 pb-12 flex flex-col items-center">
+    <div className="w-full max-w-[420px] mx-auto px-6 pt-24 pb-12 flex flex-col items-center">
       <div className="flex flex-col items-center mb-12">
         <h1 className="text-3xl font-bold text-brand tracking-tighter">CEO SUITE</h1>
         <p className="text-[7px] text-gray-500 tracking-[0.2em] uppercase mt-1">

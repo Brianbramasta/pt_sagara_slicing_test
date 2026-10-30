@@ -12,33 +12,51 @@ import { MarqueeSection } from "../components/MarqueeSection";
 import { NewsSection } from "../components/NewsSection";
 import { FaqSection } from "../components/FaqSection";
 import { AppPromoSection } from "../components/AppPromoSection";
+import { useIsAuthenticated } from "@/features/auth";
 
 export const LandingPage: React.FC = () => {
+  const isAuthenticated = useIsAuthenticated();
+
   return (
     <LandingLayout>
       <AnimatedSection delay={100}>
         <HeroSection />
       </AnimatedSection>
-      
-      <AnimatedSection delay={200}>
-        <BrowseSpaces />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={300}>
-        <RecommendedForYou />
-      </AnimatedSection>
+
+      {isAuthenticated ? (
+        <>
+          <AnimatedSection delay={300}>
+            <RecommendedForYou />
+          </AnimatedSection>
+
+          <AnimatedSection delay={500}>
+            <PromotionsSection />
+          </AnimatedSection>
+
+          <AnimatedSection delay={600}>
+            <BestDealsSection />
+          </AnimatedSection>
+        </>
+      ):(
+        <>
+        <AnimatedSection delay={200}>
+          <BrowseSpaces />
+        </AnimatedSection>
+        <AnimatedSection delay={300}>
+            <RecommendedForYou />
+          </AnimatedSection>
       
       <AnimatedSection delay={400}>
         <StatsSection />
       </AnimatedSection>
-      
-      <AnimatedSection delay={500}>
-        <PromotionsSection />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={600}>
-        <BestDealsSection />
-      </AnimatedSection>
+
+          <AnimatedSection delay={500}>
+            <PromotionsSection />
+          </AnimatedSection>
+
+          <AnimatedSection delay={600}>
+            <BestDealsSection />
+          </AnimatedSection>
       
       <AnimatedSection delay={700}>
         <MeetingRoomPackage />
@@ -63,6 +81,10 @@ export const LandingPage: React.FC = () => {
       <AnimatedSection delay={1200}>
         <AppPromoSection />
       </AnimatedSection>
+      </>
+      )}
+
+          
       
     </LandingLayout>
   );
