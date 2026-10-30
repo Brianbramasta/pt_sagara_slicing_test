@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO SUITE - Slicing Part 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#8B2635', // Merah gelap
+                            light: '#FCEEF0',   // Pink pudar untuk tombol/bg
+                            dark: '#6E1D29',    // Merah lebih gelap
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+
+    <!-- Stats & Why CEO SUITE -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex flex-col lg:flex-row gap-0">
+            <!-- Left Side: Stats -->
+            <div class="lg:w-1/2 grid grid-cols-2 gap-y-12 gap-x-4 py-8 lg:pr-12">
+                <!-- Stat 1 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-2xl opacity-60 border border-gray-200 rounded p-1">🌍</span>
+                        <span class="text-3xl font-bold text-gray-900">11</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-medium ml-12">Vibrant Cities</p>
+                </div>
+                <!-- Stat 2 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-2xl opacity-60 border border-gray-200 rounded p-1">📍</span>
+                        <span class="text-3xl font-bold text-gray-900">22</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-medium ml-12">prime locations in<br>Asia's CBDs</p>
+                </div>
+                <!-- Stat 3 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-2xl opacity-60 border border-gray-200 rounded p-1">⏳</span>
+                        <span class="text-3xl font-bold text-gray-900">25</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-medium ml-12">years in business</p>
+                </div>
+                <!-- Stat 4 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-2xl opacity-60 border border-gray-200 rounded p-1">🏛️</span>
+                        <span class="text-3xl font-bold text-gray-900">100%</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-medium ml-12">grade A+ Buildings</p>
+                </div>
+                <!-- Stat 5 (Full Width) -->
+                <div class="col-span-2 mt-2">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-2xl opacity-60 border border-gray-200 rounded p-1">🤝</span>
+                        <span class="text-3xl font-bold text-gray-900">80,000+</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-medium ml-12">businesses served</p>
+                </div>
+            </div>
+            
+            <!-- Right Side: Dark Box -->
+            <div class="lg:w-1/2 bg-brand p-12 lg:p-16 text-white">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-sm font-medium text-white/90">Why CEO SUITE?</span>
+                    <div class="h-[1px] bg-white/40 w-16"></div>
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">We revolutionize your<br>workspace</h2>
+                <p class="text-white/80 text-[13px] leading-relaxed mb-5">
+                    In today's fast-paced business environment, finding the right workspace solution is crucial to your company's success. CEO SUITE offers an unparalleled workspace experience that combines premium locations, flexibility, top-notch amenities, and exceptional service to meet the needs of modern businesses.
+                </p>
+                <p class="text-white/80 text-[13px] leading-relaxed">
+                    As Asia's leading serviced office provider, CEO SUITE stands out as the ideal partner for companies seeking more than just office space—a place where business can thrive.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex justify-between items-end mb-6">
+            <div>
+                <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+                    <span class="text-brand">🌸</span> Promotions
+                </h2>
+                <p class="text-gray-400 text-xs mt-1.5 font-medium">Don't miss this opportunity to elevate your workspace experience at unbeatable value.</p>
+            </div>
+            <button class="bg-brand-light text-brand text-xs font-semibold px-5 py-1.5 rounded hover:bg-pink-100 transition">See All</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Promo 1 -->
+            <div class="group cursor-pointer">
+                <div class="h-[200px] overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="font-bold text-[13px] text-gray-900 leading-snug mb-1.5 pr-4">Discount 20% for all co-working space booking!</h3>
+                <p class="text-[11px] text-gray-400">Limited time offer. Don't miss out on this incredible deal.</p>
+            </div>
+            
+            <!-- Promo 2 -->
+            <div class="group cursor-pointer">
+                <div class="h-[200px] overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="font-bold text-[13px] text-gray-900 leading-snug mb-1.5 pr-4">Exclusive 30% discount on monthly co-working space subscriptions!</h3>
+                <p class="text-[11px] text-gray-400">Limited time offer. Don't miss out on this incredible deal.</p>
+            </div>
+            
+            <!-- Promo 3 -->
+            <div class="group cursor-pointer">
+                <div class="h-[200px] overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="font-bold text-[13px] text-gray-900 leading-snug mb-1.5 pr-4">Special offer: Get 25% off any meeting room booking!</h3>
+                <p class="text-[11px] text-gray-400">Don't miss out on this exclusive deal. Limited time only.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Deals -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex justify-between items-end mb-6">
+            <div>
+                <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+                    <span class="text-brand">🎯</span> Best Deals
+                </h2>
+                <p class="text-gray-400 text-xs mt-1.5 font-medium">Take advantage of our special promotions and enjoy exceptional savings on your workspace.</p>
+            </div>
+            <button class="bg-brand-light text-brand text-xs font-semibold px-5 py-1.5 rounded hover:bg-pink-100 transition">See All Deals</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Deal 1 -->
+            <div class="relative h-[220px] rounded overflow-hidden group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-0 left-0 right-0 bg-brand/90 p-4 pt-5 pb-5">
+                    <h3 class="font-bold text-white text-sm mb-0.5">Rp200,000 Voucher for Office!</h3>
+                    <p class="text-[10px] text-white/70">Valid until 31 August 2024</p>
+                </div>
+            </div>
+            
+            <!-- Deal 2 -->
+            <div class="relative h-[220px] rounded overflow-hidden group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-0 left-0 right-0 bg-brand/90 p-4 pt-5 pb-5">
+                    <h3 class="font-bold text-white text-sm mb-0.5">Rp200,000 Voucher for Office!</h3>
+                    <p class="text-[10px] text-white/70">Valid until 31 August 2024</p>
+                </div>
+            </div>
+            
+            <!-- Deal 3 -->
+            <div class="relative h-[220px] rounded overflow-hidden group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-0 left-0 right-0 bg-brand/90 p-4 pt-5 pb-5">
+                    <h3 class="font-bold text-white text-sm mb-0.5">Rp200,000 Voucher for Office!</h3>
+                    <p class="text-[10px] text-white/70">Valid until 31 August 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meeting Room Package -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <!-- Left Side: Image Collage Grid -->
+            <div class="grid grid-cols-2 gap-4 h-[500px]">
+                <div class="flex flex-col gap-4 pt-8">
+                    <img src="https://images.unsplash.com/photo-1503423571797-2d2bb372094a?auto=format&fit=crop&q=80" class="w-full h-1/2 object-cover rounded shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80" class="w-full h-1/2 object-cover rounded shadow-sm">
+                </div>
+                <div class="flex flex-col gap-4 pb-8">
+                    <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80" class="w-full h-1/2 object-cover rounded shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80" class="w-full h-1/2 object-cover rounded shadow-sm">
+                </div>
+            </div>
+            
+            <!-- Right Side: Text Content -->
+            <div class="pr-4">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Meeting Room Package</h2>
+                <p class="text-[13px] text-gray-500 leading-relaxed mb-4">
+                    Elevate your meetings with CEO SUITE's premium meeting rooms, now available at an exclusive special rate.
+                </p>
+                <p class="text-[13px] text-gray-500 leading-relaxed mb-8">
+                    Whether you're hosting a team brainstorming session, client presentations, or strategic workshops, our fully-equipped meeting spaces offer the perfect blend of professionalism and comfort.
+                </p>
+                <button class="bg-brand text-white px-6 py-2.5 rounded text-sm font-medium hover:bg-brand-dark transition shadow-sm">
+                    Browse Packages <span class="ml-1 text-xs">▶</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

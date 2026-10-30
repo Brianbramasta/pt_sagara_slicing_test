@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO SUITE - Slicing Part 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#8B2635', // Merah Marun
+                            light: '#FCEEF0',   // Pink pudar
+                            dark: '#6E1D29',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'marquee': 'marquee 30s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Hide scrollbar for marquee container but keep functionality -->
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+
+    <!-- Our Corporate Partners -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <h2 class="text-xl font-bold text-gray-900">Our Corporate Partners</h2>
+                <p class="text-gray-400 text-xs mt-1.5 font-medium">Exclusive benefits and promotions tailored to meet the needs of businesses of all sizes.</p>
+            </div>
+            <button class="bg-brand-light text-brand text-xs font-semibold px-6 py-2 rounded hover:bg-pink-100 transition">See All</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Partner 1 -->
+            <div class="group cursor-pointer">
+                <div class="relative h-[180px] rounded overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <!-- Partner Logo Badge Overlays (Simulated) -->
+                    <div class="absolute top-3 left-3 flex items-center gap-2">
+                        <span class="text-white text-[10px] font-bold tracking-tighter">CEO SUITE</span>
+                        <span class="text-white text-xs">|</span>
+                        <span class="text-white text-xs font-bold italic">mandiri</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-[13px] text-gray-900 leading-snug mb-2">Exclusive Corporate Rate | Bank Mandiri</h3>
+                <p class="text-[11px] text-gray-400 leading-relaxed pr-2">Enjoy substantial savings on meeting rooms, event spaces, and other business solutions when you partner with us.</p>
+            </div>
+            
+            <!-- Partner 2 -->
+            <div class="group cursor-pointer">
+                <div class="relative h-[180px] rounded overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <!-- Partner Logo Badge Overlays (Simulated) -->
+                    <div class="absolute top-3 left-3 flex items-center gap-2">
+                        <span class="text-white text-[10px] font-bold tracking-tighter">CEO SUITE</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-[13px] text-gray-900 leading-snug mb-2">Exclusive Member Benefits</h3>
+                <p class="text-[11px] text-gray-400 leading-relaxed pr-2">As a valued member, you'll enjoy a range of benefits designed to enhance your experience and provide exceptional value.</p>
+            </div>
+            
+            <!-- Partner 3 -->
+            <div class="group cursor-pointer">
+                <div class="relative h-[180px] rounded overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <!-- Partner Logo Badge Overlays (Simulated) -->
+                    <div class="absolute top-3 left-3 flex items-center gap-2">
+                        <span class="text-white text-[10px] font-bold tracking-tighter">CEO SUITE</span>
+                        <span class="text-white text-xs">|</span>
+                        <span class="text-white text-xs font-bold text-red-500 bg-white/20 px-1">DBS</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-[13px] text-gray-900 leading-snug mb-2">10% Offer for DBS Credit Card Holder</h3>
+                <p class="text-[11px] text-gray-400 leading-relaxed pr-2">Exclusive to DBS Credit Card holders: Get a 10% discount on your next booking. Valid for corporate booking only.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted by Customers (Marquee Auto Slider) -->
+    <section class="w-full bg-gray-50/50 py-16 overflow-hidden border-t border-b border-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+            <h2 class="text-2xl font-medium text-gray-600 relative inline-block">
+                Trusted by <span class="text-brand font-bold">80,000+</span> customers
+                <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-[2px] bg-brand/30"></div>
+            </h2>
+        </div>
+
+        <!-- Marquee Container -->
+        <div class="flex overflow-hidden group w-full relative">
+            <!-- Gradient Overlays for smooth edges -->
+            <div class="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Logo Track (First Set) -->
+            <div class="flex animate-marquee whitespace-nowrap items-center min-w-full justify-around gap-16 pr-16">
+                <!-- Logos Text Simulation / Placeholders -->
+                <div class="text-4xl font-light text-gray-300 opacity-60">Uber</div>
+                <div class="text-3xl font-bold text-gray-300 opacity-60 border-2 border-gray-300 rounded-full px-2 py-1">DELL</div>
+                <div class="text-2xl font-black text-gray-300 opacity-60 tracking-tighter">SAMSUNG</div>
+                <div class="text-4xl font-bold italic text-gray-300 opacity-60">NIKE</div>
+                <div class="text-2xl font-serif text-gray-300 opacity-60">ETIHAD</div>
+                <div class="text-2xl font-bold text-gray-300 opacity-60 flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-gray-300"></span> ZURICH</div>
+                <div class="text-2xl font-black text-gray-300 opacity-60 flex flex-col items-center leading-none">
+                    <span class="text-xs mb-1">|||...|||</span>
+                    CISCO
+                </div>
+                <div class="text-2xl font-bold text-gray-300 opacity-60">bp</div>
+                <div class="text-2xl font-bold text-gray-300 opacity-60">Exxon</div>
+            </div>
+
+            <!-- Logo Track (Duplicated Set for infinite loop) -->
+            <div class="flex animate-marquee whitespace-nowrap items-center min-w-full justify-around gap-16 pr-16" aria-hidden="true">
+                <div class="text-4xl font-light text-gray-300 opacity-60">Uber</div>
+                <div class="text-3xl font-bold text-gray-300 opacity-60 border-2 border-gray-300 rounded-full px-2 py-1">DELL</div>
+                <div class="text-2xl font-black text-gray-300 opacity-60 tracking-tighter">SAMSUNG</div>
+                <div class="text-4xl font-bold italic text-gray-300 opacity-60">NIKE</div>
+                <div class="text-2xl font-serif text-gray-300 opacity-60">ETIHAD</div>
+                <div class="text-2xl font-bold text-gray-300 opacity-60 flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-gray-300"></span> ZURICH</div>
+                <div class="text-2xl font-black text-gray-300 opacity-60 flex flex-col items-center leading-none">
+                    <span class="text-xs mb-1">|||...|||</span>
+                    CISCO
+                </div>
+                <div class="text-2xl font-bold text-gray-300 opacity-60">bp</div>
+                <div class="text-2xl font-bold text-gray-300 opacity-60">Exxon</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News, events and insights -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h2 class="text-xl font-bold text-gray-900 mb-8">News, events and insights for you</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <!-- Left Side: List -->
+            <div class="flex flex-col justify-between">
+                <div class="space-y-6">
+                    <!-- Item 1 -->
+                    <div class="flex gap-5 cursor-pointer group">
+                        <div class="w-40 h-28 flex-shrink-0 overflow-hidden rounded">
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-[9px] text-gray-400 mb-1.5 uppercase tracking-wide">Insights • 03 June 2023</p>
+                            <h3 class="font-bold text-[15px] text-gray-900 leading-snug mb-2 group-hover:text-brand transition">Does productivity increase when working remotely?</h3>
+                            <p class="text-[10px] text-gray-500 line-clamp-2 leading-relaxed pr-4">NEW YORK - A 6-year-old horse died after being injured in a race at Belmont Park ahead of next week's...</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex gap-5 cursor-pointer group">
+                        <div class="w-40 h-28 flex-shrink-0 overflow-hidden rounded">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-[9px] text-gray-400 mb-1.5 uppercase tracking-wide">Insights • 03 June 2023</p>
+                            <h3 class="font-bold text-[15px] text-gray-900 leading-snug mb-2 group-hover:text-brand transition">Morning routine to boost your mood</h3>
+                            <p class="text-[10px] text-gray-500 line-clamp-2 leading-relaxed pr-4">NEW YORK - A 6-year-old horse died after being injured in a race at Belmont Park ahead of next week's...</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex gap-5 cursor-pointer group">
+                        <div class="w-40 h-28 flex-shrink-0 overflow-hidden rounded">
+                            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-[9px] text-gray-400 mb-1.5 uppercase tracking-wide">Insights • 03 June 2023</p>
+                            <h3 class="font-bold text-[15px] text-gray-900 leading-snug mb-2 group-hover:text-brand transition">5+ tips to find comfortable co-working space</h3>
+                            <p class="text-[10px] text-gray-500 line-clamp-2 leading-relaxed pr-4">NEW YORK - A 6-year-old horse died after being injured in a race at Belmont Park ahead of next week's...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-2">
+                    <button class="bg-brand text-white text-xs font-semibold px-6 py-3 rounded hover:bg-brand-dark transition shadow-sm inline-flex items-center gap-2">
+                        See All Updates <span>></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Right Side: Featured Highlight -->
+            <div class="relative h-full min-h-[450px] rounded-lg overflow-hidden group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                
+                <!-- Badge Top Left -->
+                <div class="absolute top-6 left-6 border border-white/60 text-white text-[10px] font-bold px-3 py-1 tracking-wider bg-black/20 backdrop-blur-sm">
+                    TIPS
+                </div>
+                
+                <!-- Content Bottom Left -->
+                <div class="absolute bottom-8 left-8 right-8">
+                    <p class="text-white/80 text-xs mb-2">Debits - 03 June 2023</p>
+                    <h3 class="text-white text-3xl font-bold leading-tight">Minimal workspace for<br>inspirations</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
