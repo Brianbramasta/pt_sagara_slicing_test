@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { RecommendedSpacesCard } from "./RecommendedSpacesCard";
 import { IconMeetingRoom } from "@/icons/components/icons/IconMeetingRoom";
 import { IconOffice } from "@/icons/components/icons/IconOffice";
@@ -16,9 +17,10 @@ export const RecommendedForYou: React.FC = () => {
       hourlyPrice: "Hourly Rp400,000",
       hasDiscount: true,
       imageSrc: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80",
+      productId: "1",
     },
     {
-      title: "AXA Tower Meeting Room",
+      title: "Wisma GKBI Boardroom",
       type: "Meeting Room",
       typeColor: "brand",
       icon: <IconMeetingRoom />,
@@ -26,6 +28,7 @@ export const RecommendedForYou: React.FC = () => {
       pricePeriod: "Daily",
       price: "Rp1,200,000",
       imageSrc: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80",
+      productId: "1",
     },
     {
       title: "Suite 7 View",
@@ -37,16 +40,18 @@ export const RecommendedForYou: React.FC = () => {
       price: "Rp3,480,000",
       hourlyPrice: "Hourly Rp400,000",
       imageSrc: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&q=80",
+      productId: "1",
     },
     {
       title: "Suite VIP 5 Non View",
-      type: "Co-Working Space Dedicated",
+      type: "Co-Working Space (Dedicated)",
       typeColor: "green-500",
       icon: <IconCoworking />,
       people: 1,
       pricePeriod: "Weekly",
       price: "Rp750,000",
       imageSrc: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80",
+      productId: "1",
     },
   ];
 
@@ -62,7 +67,9 @@ export const RecommendedForYou: React.FC = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {spaces.map((space, index) => (
-          <RecommendedSpacesCard key={index} {...space} />
+          <Link key={index} to={`/product/${space.productId}`}>
+            <RecommendedSpacesCard {...space} />
+          </Link>
         ))}
       </div>
     </section>

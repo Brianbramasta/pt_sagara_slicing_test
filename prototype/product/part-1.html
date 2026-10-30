@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Detail Slicing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#8B2635', // Merah gelap
+                            light: '#FDF7F7',   // Background pink sangat pudar untuk kotak harga
+                            soft: '#FCEEF0'     // Background pink untuk badge
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-white min-h-screen">
+
+    <!-- Top Bar (Select Date) -->
+    <div class="bg-brand py-6 px-4 md:px-12 w-full">
+        <div class="max-w-7xl mx-auto">
+            <label class="block text-white text-xs font-medium mb-2">Select Date</label>
+            <div class="relative w-full max-w-md">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg class="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+                <input type="text" placeholder="Select Date" class="w-full pl-10 pr-4 py-2.5 bg-white rounded-md text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-white/50" readonly>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Photo Gallery -->
+        <div class="flex flex-col md:flex-row gap-4 mb-12 h-auto md:h-[400px]">
+            <!-- Main Large Image -->
+            <div class="w-full md:w-2/3 h-64 md:h-full rounded-2xl overflow-hidden shadow-sm">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" alt="Main Boardroom" class="w-full h-full object-cover">
+            </div>
+            
+            <!-- Grid of 4 Smaller Images -->
+            <div class="w-full md:w-1/3 grid grid-cols-2 grid-rows-2 gap-4 h-64 md:h-full">
+                <div class="rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-sm relative">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                    <!-- Overlaid Button -->
+                    <button class="absolute bottom-3 right-3 bg-white text-gray-800 text-[11px] font-semibold px-3 py-1.5 rounded flex items-center gap-1.5 shadow hover:bg-gray-50 transition">
+                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z"/></svg>
+                        Show All Photos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content & Booking Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <!-- Left Side: Room Details -->
+            <div class="lg:col-span-2">
+                <!-- Title & Rating -->
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Wisma GKBI Boardroom</h1>
+                        <!-- Tag/Badge -->
+                        <span class="inline-flex items-center gap-1.5 bg-brand-soft text-brand text-[11px] font-semibold px-2.5 py-1 rounded text-xs">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm-1 15h-2v-4h2v4zm4 0h-2v-4h2v4zm-2-6H9V9h4v3z"/></svg>
+                            Meeting Room
+                        </span>
+                    </div>
+                    <!-- Rating -->
+                    <div class="flex items-center gap-1 text-sm font-semibold">
+                        <span class="text-yellow-400 text-lg">★</span> 4.8/5
+                    </div>
+                </div>
+
+                <!-- Location & Facilities -->
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-6 mb-10 pb-6 border-b border-gray-100">
+                    <div class="flex items-center text-gray-500 text-sm mb-4 sm:mb-0">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Wisma GKBI, Jakarta
+                    </div>
+                    
+                    <!-- Icons (Capacity/Amenities) -->
+                    <div class="flex items-center gap-4 text-gray-500 text-sm">
+                        <div class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                            20
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                            20
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                            20
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Section -->
+                <div>
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">Price</h2>
+                    
+                    <div class="bg-brand-light border border-gray-100/50 rounded-2xl p-6">
+                        <!-- Daily Best Deal -->
+                        <div class="flex justify-between items-center mb-5">
+                            <div class="flex items-center gap-2">
+                                <span class="text-gray-400 text-sm">Daily</span>
+                                <span class="text-xl font-bold text-brand">Rp2,400,000</span>
+                            </div>
+                            <span class="bg-green-50 text-green-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
+                                Best Deal
+                            </span>
+                        </div>
+                        
+                        <div class="w-full h-px bg-gray-200/60 mb-5"></div>
+                        
+                        <!-- Other Prices -->
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-4">
+                                <span class="text-gray-400 text-xs w-14">Hourly</span>
+                                <span class="text-sm font-semibold text-gray-800">Rp400,000</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-gray-400 text-xs w-14">Weekly</span>
+                                <span class="text-sm font-semibold text-gray-800">Rp13,350,000</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="text-gray-400 text-xs w-14">Monthly</span>
+                                <span class="text-sm font-semibold text-gray-800">Rp44,500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Side: Booking Card -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 p-6 sticky top-8">
+                    <p class="text-gray-500 text-sm mb-4">Select date to Book</p>
+                    
+                    <!-- Disabled Button State -->
+                    <button disabled class="w-full bg-gray-100 text-gray-300 font-medium py-3 rounded-md text-sm cursor-not-allowed transition">
+                        Book
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
