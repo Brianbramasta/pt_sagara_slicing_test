@@ -2,12 +2,13 @@ interface BrowseSpacesCardProps {
   imageSrc: string;
   type: string;
   colorClass: string;
+  icon: React.ReactNode;
 }
 
-export const BrowseSpacesCard: React.FC<BrowseSpacesCardProps> = ({ imageSrc, type, colorClass }) => {
+export const BrowseSpacesCard: React.FC<BrowseSpacesCardProps> = ({ imageSrc, type, colorClass, icon   }) => {
   return (
     <div>
-      <div className="relative h-[220px] w-full mb-4 overflow-hidden rounded-sm group cursor-pointer">
+      <div className="relative h-[220px] w-full mb-4 overflow-hidden  group cursor-pointer">
         <img
           src={imageSrc}
           alt={`${type} space`}
@@ -19,8 +20,8 @@ export const BrowseSpacesCard: React.FC<BrowseSpacesCardProps> = ({ imageSrc, ty
           </svg>
         </div>
       </div>
-      <div className="flex items-center gap-2">
-        <div className={`w-3 h-3 ${colorClass} rounded-sm`}></div>
+      <div className="flex items-center  gap-2">
+        <span className="text-xl ">{icon}</span>
         <span className="font-medium text-sm">{type}</span>
       </div>
     </div>
