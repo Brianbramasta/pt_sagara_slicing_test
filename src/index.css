@@ -290,6 +290,17 @@ layer(base);
   background-color: #344054;
 }
 
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  @keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
 .layer utilities {
   /* For Remove Date Icon */
   input[type='date']::-webkit-inner-spin-button,
@@ -812,6 +823,7 @@ span.flatpickr-weekday,
 }
 
 H1 {
+  color: #3D3D3D;
 }
 
 H2 {
