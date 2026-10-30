@@ -5,9 +5,20 @@ layer(base);
 
 @custom-variant dark (&:is(.dark *));
 
+@layer base {
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
 @theme {
   --font-*: initial;
   --font-outfit: Outfit, sans-serif;
+  --color-brand: #8B2635;
+  --color-brand-dark: #6E1D29;
+  --color-brand-light: #FCEEF0;
+  --color-brand-orange: #E8702A;
 
   --breakpoint-*: initial;
   --breakpoint-2xsm: 375px;
@@ -279,7 +290,7 @@ layer(base);
   background-color: #344054;
 }
 
-@layer utilities {
+.layer utilities {
   /* For Remove Date Icon */
   input[type='date']::-webkit-inner-spin-button,
   input[type='time']::-webkit-inner-spin-button,
