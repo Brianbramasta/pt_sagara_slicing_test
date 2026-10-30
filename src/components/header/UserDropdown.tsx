@@ -3,13 +3,13 @@ import { DropdownItem } from '../ui/dropdown/DropdownItem';
 import { Dropdown } from '../ui/dropdown/Dropdown';
 import { clearAllFilterPersistence } from '@/stores/filterStore';
 import { env } from '@/config/env';
-import { UseAuth } from '@/features/auth';
+import { useAuth } from '@/features/auth';
 
 const isDev = env.appEnv === 'dev';
 
 export default function UserDropdown() {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logout } = UseAuth();
+  const { user, logout } = useAuth();
 
   function toggleDropdown() {
     setIsOpen(!isOpen);

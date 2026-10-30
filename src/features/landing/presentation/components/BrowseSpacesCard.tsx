@@ -5,7 +5,7 @@ interface BrowseSpacesCardProps {
   icon: React.ReactNode;
 }
 
-export const BrowseSpacesCard: React.FC<BrowseSpacesCardProps> = ({ imageSrc, type, colorClass, icon   }) => {
+export const BrowseSpacesCard: React.FC<BrowseSpacesCardProps> = ({ imageSrc, type, colorClass: _colorClass, icon   }) => {
   return (
     <div>
       <div className="relative h-[220px] w-full mb-4 overflow-hidden  group cursor-pointer">

@@ -12,7 +12,6 @@ import { MarqueeSection } from "../components/MarqueeSection";
 import { NewsSection } from "../components/NewsSection";
 import { FaqSection } from "../components/FaqSection";
 import { AppPromoSection } from "../components/AppPromoSection";
-import { Footer } from "../components/Footer";
 
 export const LandingPage: React.FC = () => {
   return (
