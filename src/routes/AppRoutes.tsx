@@ -15,8 +15,8 @@ export default function AppRoutes() {
       <Route path="/verify-otp" element={<VerifyOtpPage />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
       <Route path="/karyawan-demo" element={<KaryawanPage />} />
-      <Route path="/" element={<LandingPage />} />
       <Route path="/product/:id" element={<ProductDetailPage />} />
+      <Route path="/" element={<LandingPage />} />
 
       <Route element={<ProtectedOutlet />}>
         <Route element={<AppLayout />}>
