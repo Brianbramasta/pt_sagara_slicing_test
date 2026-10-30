@@ -2,6 +2,7 @@ interface RecommendedSpacesCardProps {
   title: string;
   type: string;
   typeColor: string;
+  icon: React.ReactNode;
   people: number;
   pricePeriod: string;
   price: string;
@@ -15,6 +16,7 @@ export const RecommendedSpacesCard: React.FC<RecommendedSpacesCardProps> = ({
   title,
   type,
   typeColor,
+  icon,
   people,
   pricePeriod,
   price,
@@ -30,7 +32,7 @@ export const RecommendedSpacesCard: React.FC<RecommendedSpacesCardProps> = ({
           <div>
             <h3 className="font-bold text-sm text-gray-900 leading-tight">{title}</h3>
             <span className={`text-${typeColor} text-[10px] flex items-center mt-1`}>
-              <span className={`w-2 h-2 bg-${typeColor} mr-1.5 rounded-full`}></span>
+              <span className="w-4 h-4 mr-1.5">{icon}</span>
               {type}
             </span>
           </div>

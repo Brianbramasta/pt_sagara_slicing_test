@@ -1,4 +1,7 @@
 import { RecommendedSpacesCard } from "./RecommendedSpacesCard";
+import { IconMeetingRoom } from "@/icons/components/icons/IconMeetingRoom";
+import { IconOffice } from "@/icons/components/icons/IconOffice";
+import { IconCoworking } from "@/icons/components/icons/IconCoworking";
 
 export const RecommendedForYou: React.FC = () => {
   const spaces = [
@@ -6,6 +9,7 @@ export const RecommendedForYou: React.FC = () => {
       title: "AXA Tower Meeting Room",
       type: "Meeting Room",
       typeColor: "brand",
+      icon: <IconMeetingRoom />,
       people: 4,
       pricePeriod: "Daily",
       price: "Rp2,880,000",
@@ -17,6 +21,7 @@ export const RecommendedForYou: React.FC = () => {
       title: "AXA Tower Meeting Room",
       type: "Meeting Room",
       typeColor: "brand",
+      icon: <IconMeetingRoom />,
       people: 4,
       pricePeriod: "Daily",
       price: "Rp1,200,000",
@@ -26,6 +31,7 @@ export const RecommendedForYou: React.FC = () => {
       title: "Suite 7 View",
       type: "Office",
       typeColor: "blue-500",
+      icon: <IconOffice />,
       people: 3,
       pricePeriod: "Daily",
       price: "Rp3,480,000",
@@ -36,6 +42,7 @@ export const RecommendedForYou: React.FC = () => {
       title: "Suite VIP 5 Non View",
       type: "Co-Working Space Dedicated",
       typeColor: "green-500",
+      icon: <IconCoworking />,
       people: 1,
       pricePeriod: "Weekly",
       price: "Rp750,000",

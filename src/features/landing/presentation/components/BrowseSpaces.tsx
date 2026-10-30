@@ -1,33 +1,13 @@
 import { BrowseSpacesCard } from "./BrowseSpacesCard";
+import { IconPrivateOffice } from "@/icons/components/icons/IconPrivateOffice";
+import { IconCoworking } from "@/icons/components/icons/IconCoworking";
+import { IconMeetingRoom } from "@/icons/components/icons/IconMeetingRoom";
 
 export const BrowseSpaces: React.FC = () => {
   const spaceTypes = [
-    { type: "Private Offices", imageSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80", colorClass: "bg-blue-500" , icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1_24324)">
-<path d="M0 24H12V0H0V24ZM7.5 3H10.5V6H7.5V3ZM7.5 9H10.5V12H7.5V9ZM7.5 15H10.5V18H7.5V15ZM1.5 3H4.5V6H1.5V3ZM1.5 9H4.5V12H1.5V9ZM1.5 15H4.5V18H1.5V15ZM13.5 7.5H24V9H13.5V7.5ZM13.5 24H16.5V18H21V24H24V10.5H13.5V24Z" fill="#0050B3"/>
-</g>
-<defs>
-<clipPath id="clip0_1_24324">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
-</svg>
-},
-    { type: "Coworking Space", imageSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80", colorClass: "bg-green-500" , icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M21.75 15.75H21V6.75C21 6.15326 20.7629 5.58097 20.341 5.15901C19.919 4.73705 19.3467 4.5 18.75 4.5H5.25C4.65326 4.5 4.08097 4.73705 3.65901 5.15901C3.23705 5.58097 3 6.15326 3 6.75V15.75H2.25C2.05109 15.75 1.86032 15.829 1.71967 15.9697C1.57902 16.1103 1.5 16.3011 1.5 16.5V18C1.5 18.5967 1.73705 19.169 2.15901 19.591C2.58097 20.0129 3.15326 20.25 3.75 20.25H20.25C20.8467 20.25 21.419 20.0129 21.841 19.591C22.2629 19.169 22.5 18.5967 22.5 18V16.5C22.5 16.3011 22.421 16.1103 22.2803 15.9697C22.1397 15.829 21.9489 15.75 21.75 15.75ZM10.5 6.75H13.5C13.6989 6.75 13.8897 6.82902 14.0303 6.96967C14.171 7.11032 14.25 7.30109 14.25 7.5C14.25 7.69891 14.171 7.88968 14.0303 8.03033C13.8897 8.17098 13.6989 8.25 13.5 8.25H10.5C10.3011 8.25 10.1103 8.17098 9.96967 8.03033C9.82902 7.88968 9.75 7.69891 9.75 7.5C9.75 7.30109 9.82902 7.11032 9.96967 6.96967C10.1103 6.82902 10.3011 6.75 10.5 6.75ZM21 18C21 18.1989 20.921 18.3897 20.7803 18.5303C20.6397 18.671 20.4489 18.75 20.25 18.75H3.75C3.55109 18.75 3.36032 18.671 3.21967 18.5303C3.07902 18.3897 3 18.1989 3 18V17.25H21V18Z" fill="#5B8C00"/>
-</svg>
-},
-    { type: "Meeting Room", imageSrc: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80", colorClass: "bg-brand" , icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1_24340)">
-<path d="M20.8 8.99992H12V16.9999H11V20.9999H5C4.73478 20.9999 4.48043 20.8946 4.29289 20.707C4.10536 20.5195 4 20.2651 4 19.9999V10.9999H1L11.327 1.61192C11.5111 1.4444 11.7511 1.35156 12 1.35156C12.2489 1.35156 12.4889 1.4444 12.673 1.61192L20.8 8.99992ZM14 10.9999H23V17.9999H14V10.9999ZM13 20.9999H24V18.9999H13V20.9999Z" fill="#9E1068"/>
-</g>
-<defs>
-<clipPath id="clip0_1_24340">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
-</svg>
-},
+    { type: "Private Offices", imageSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80", colorClass: "bg-blue-500", icon: <IconPrivateOffice /> },
+    { type: "Coworking Space", imageSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80", colorClass: "bg-green-500", icon: <IconCoworking /> },
+    { type: "Meeting Room", imageSrc: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80", colorClass: "bg-brand", icon: <IconMeetingRoom /> },
   ];
 
   const handleCheckAvailability = () => {
