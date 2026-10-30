@@ -1,4 +1,4 @@
-import { Navbar } from "../components/Navbar";
+import { LandingLayout } from "../layout/LandingLayout";
 import { HeroSection } from "../components/HeroSection";
 import { BrowseSpaces } from "../components/BrowseSpaces";
 import { RecommendedForYou } from "../components/RecommendedForYou";
@@ -9,11 +9,12 @@ import { MeetingRoomPackage } from "../components/MeetingRoomPackage";
 import { CorporatePartnersSection } from "../components/CorporatePartnersSection";
 import { MarqueeSection } from "../components/MarqueeSection";
 import { NewsSection } from "../components/NewsSection";
+import { FaqSection } from "../components/FaqSection";
+import { AppPromoSection } from "../components/AppPromoSection";
 
 export const LandingPage: React.FC = () => {
   return (
-    <div className="font-sans text-gray-800 bg-white">
-      <Navbar />
+    <LandingLayout>
       <HeroSection />
       <BrowseSpaces />
       <RecommendedForYou />
@@ -24,6 +25,8 @@ export const LandingPage: React.FC = () => {
       <CorporatePartnersSection />
       <MarqueeSection />
       <NewsSection />
-    </div>
+      <FaqSection />
+      <AppPromoSection />
+    </LandingLayout>
   );
 };
