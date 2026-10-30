@@ -18,7 +18,7 @@ const spaceTypeOptions = [
 export const HeroSection: React.FC = () => {
   const [searchValues, setSearchValues] = useState<SearchFormValues>({
     city: "Jakarta",
-    date: { start: "Mon, 17 August 2024", end: "Tue, 18 August 2024" },
+    date: { start: "Mon, 17 Agustus 2024", end: "Tue, 18 Agustus 2024" },
     spaceType: "All Space",
   });
 
