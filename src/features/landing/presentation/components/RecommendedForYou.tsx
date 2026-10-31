@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { RecommendedSpacesCard } from "./RecommendedSpacesCard";
 import { IconMeetingRoom } from "@/icons/components/icons/IconMeetingRoom";
-import { IconOffice } from "@/icons/components/icons/IconOffice";
+import { IconPrivateOffice } from "@/icons/components/icons/IconPrivateOffice";
 import { IconCoworking } from "@/icons/components/icons/IconCoworking";
 
 export const RecommendedForYou: React.FC = () => {
@@ -14,7 +14,8 @@ export const RecommendedForYou: React.FC = () => {
       people: 4,
       pricePeriod: "Daily",
       price: "Rp2,880,000",
-      hourlyPrice: "Hourly Rp400,000",
+      priceDiscount: "Rp2,400,000",
+      hourlyPrice: "Rp400,000",
       hasDiscount: true,
       imageSrc: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80",
       productId: "1",
@@ -34,11 +35,11 @@ export const RecommendedForYou: React.FC = () => {
       title: "Suite 7 View",
       type: "Office",
       typeColor: "blue-500",
-      icon: <IconOffice />,
+      icon: <IconPrivateOffice />,
       people: 3,
       pricePeriod: "Daily",
       price: "Rp3,480,000",
-      hourlyPrice: "Hourly Rp400,000",
+      hourlyPrice: "Rp400,000",
       imageSrc: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&q=80",
       productId: "1",
     },
@@ -62,7 +63,7 @@ export const RecommendedForYou: React.FC = () => {
           <h2 className="text-2xl font-bold text-gray-900">Recommended For You</h2>
           <p className="text-gray-500 text-sm mt-1">Explore top-rated meeting rooms and workspaces.</p>
         </div>
-        <button className="border border-gray-200 text-xs font-medium px-4 py-1.5 rounded hover:bg-gray-50">Filter</button>
+        <button className="border border-gray-200 text-xs font-medium px-4 py-1.5 rounded-full hover:bg-gray-50">Filter</button>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

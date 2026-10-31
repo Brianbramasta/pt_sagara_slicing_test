@@ -10,6 +10,7 @@ interface RecommendedSpacesCardProps {
   hasDiscount?: boolean;
   imageSrc: string;
   shownPrice?: boolean;
+  priceDiscount?: string;
 }
 
 export const RecommendedSpacesCard: React.FC<RecommendedSpacesCardProps> = ({
@@ -23,28 +24,37 @@ export const RecommendedSpacesCard: React.FC<RecommendedSpacesCardProps> = ({
   hourlyPrice,
   hasDiscount = false,
   imageSrc,
+  priceDiscount
 }) => {
   return (
-    <div className="border border-gray-100 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow transition">
-      <img src={imageSrc} alt={title} className="w-full h-40 object-cover" />
+    <div className="border border-gray-100 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow transition h-full">
+      <img src={imageSrc} alt={title} className="w-full h-40 object-cover p-2" />
       <div className="p-4">
-        <div className="flex justify-between items-start mb-2">
+        <div className="flex justify-between items-center mb-2">
           <div>
             <h3 className="font-bold text-sm text-gray-900 leading-tight">{title}</h3>
-            <span className={`text-${typeColor} text-[10px] flex items-center mt-1`}>
-              <span className="w-4 h-4 mr-1.5">{icon}</span>
+            <span className={`text-${typeColor} text-[10px] flex items-center mt-1 gap-2 ${typeColor=== 'brand' ? 'bg-brand/10' : typeColor=== `blue-500`? 'bg-blue-500/10' : 'bg-green-500/10'} px-2 py-0.5 rounded-full`}>
+              <span className="w-4 h-4 mr-1.5 top-[-5px] relative" style={{ zoom: 0.5 }}>
+                {icon}
+              </span>
               {type}
             </span>
           </div>
-          <span className="text-gray-500 text-[10px] flex items-center">
-            <span className="mr-1">👤</span> {people} People
+          <span className="text-gray-500 text-[12px] flex items-center">
+             {people} People
           </span>
         </div>
         <div className="mt-4">
-          <p className="text-[10px] text-gray-400 mb-0.5">{pricePeriod}</p>
-          <div className="font-bold text-sm text-gray-900">{price}</div>
+          <p className="text-[10px] text-brand mb-0.5 font-medium">{pricePeriod}</p>
+           {hasDiscount && priceDiscount ? (
+            <>
+            <p className="text-[10px] text-gray-400 line-through">{price}</p>
+            <div className="font-bold text-sm text-brand">{priceDiscount}</div>
+            </>
+          ):(<><div className="font-bold text-sm text-brand">{price}</div></>)}
+          
           {hasDiscount && hourlyPrice && (
-            <p className="text-[10px] text-gray-400 line-through">{hourlyPrice}</p>
+            <p className="text-[10px] text-gray-800 "><span className="text-gray-400">Hourly</span> {hourlyPrice}</p>
           )}
         </div>
       </div>

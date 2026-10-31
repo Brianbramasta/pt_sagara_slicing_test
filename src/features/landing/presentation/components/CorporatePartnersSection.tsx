@@ -40,7 +40,7 @@ export const CorporatePartnersSection: React.FC = () => {
             Exclusive benefits and promotions tailored to meet the needs of businesses of all sizes.
           </p>
         </div>
-        <button className="bg-[#FCEEF0] text-[#8B2635] text-xs font-semibold px-6 py-2 rounded hover:bg-pink-100 transition">
+        <button className="bg-[#FCEEF0] text-brand text-xs font-semibold px-6 py-2 rounded hover:bg-pink-100 transition">
           See All
         </button>
       </div>

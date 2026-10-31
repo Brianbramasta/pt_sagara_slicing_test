@@ -40,7 +40,7 @@ export const MeetingRoomPackage: React.FC = () => {
             workshops, our fully-equipped meeting spaces offer the perfect blend of professionalism
             and comfort.
           </p>
-          <button className="bg-[#8B2635] text-white px-6 py-2.5 rounded text-sm font-medium hover:bg-[#6E1D29] transition shadow-sm">
+          <button className="bg-brand text-white px-6 py-2.5 rounded text-sm font-medium hover:bg-[#6E1D29] transition shadow-sm">
             Browse Packages <span className="ml-1 text-xs">▶</span>
           </button>
         </div>

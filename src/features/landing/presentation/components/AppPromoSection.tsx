@@ -4,7 +4,7 @@ export const AppPromoSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="pr-8">
-            <h2 className="text-3xl font-bold text-[#8B2635] mb-4">
+            <h2 className="text-3xl font-bold text-brand mb-4">
               Download the CEO SUITE App Now!
             </h2>
             <p className="text-gray-500 text-sm mb-8">
@@ -48,12 +48,12 @@ export const AppPromoSection: React.FC = () => {
                 <p className="text-[9px] text-gray-400 mb-2">📍 Jakarta Pusat</p>
                 <div className="flex justify-between items-center mt-4">
                   <span className="font-bold text-xs">Rp2.400.000</span>
-                  <span className="text-[8px] text-[#8B2635] bg-[#FCEEF0] px-2 py-1 rounded">Book Now</span>
+                  <span className="text-[8px] text-brand bg-[#FCEEF0] px-2 py-1 rounded">Book Now</span>
                 </div>
               </div>
             </div>
             <div className="absolute right-32 top-32 w-[220px] h-[440px] bg-white rounded-[1.8rem] shadow-lg border-8 border-gray-800 overflow-hidden z-10 transform scale-95 origin-bottom-right">
-              <div className="bg-[#8B2635] h-16 w-full px-4 py-2 text-white">
+              <div className="bg-brand h-16 w-full px-4 py-2 text-white">
                 <div className="text-[8px]">Good Morning,</div>
                 <div className="text-[10px] font-bold">John Doe</div>
               </div>

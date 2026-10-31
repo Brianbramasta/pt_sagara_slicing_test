@@ -19,7 +19,7 @@ export const StatsSection: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="lg:w-1/2 bg-[#8B2635] p-12 lg:p-16 text-white">
+        <div className="lg:w-1/2 bg-brand p-12 lg:p-16 text-white">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-sm font-medium text-white/90">Why CEO SUITE?</span>
             <div className="h-[1px] bg-white/40 w-16"></div>

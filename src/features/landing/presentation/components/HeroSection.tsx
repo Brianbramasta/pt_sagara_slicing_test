@@ -242,7 +242,7 @@ export const HeroSection: React.FC = () => {
               <button
                 type="button"
                 onClick={handleSearch}
-                className="bg-[#8B2635] text-white px-8 py-2 rounded text-sm font-medium hover:bg-[#6E1D29] transition"
+                className="bg-brand text-white px-8 py-2 rounded text-sm font-medium hover:bg-[#6E1D29] transition"
               >
                 Search
               </button>

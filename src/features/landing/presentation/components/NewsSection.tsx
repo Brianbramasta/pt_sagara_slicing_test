@@ -42,7 +42,7 @@ export const NewsSection: React.FC = () => {
           </div>
 
           <div className="mt-8 pt-2">
-            <button className="bg-[#8B2635] text-white text-xs font-semibold px-6 py-3 rounded hover:bg-[#6E1D29] transition shadow-sm inline-flex items-center gap-2">
+            <button className="bg-brand text-white text-xs font-semibold px-6 py-3 rounded hover:bg-[#6E1D29] transition shadow-sm inline-flex items-center gap-2">
               See All Updates <span>&#62;</span>
             </button>
           </div>

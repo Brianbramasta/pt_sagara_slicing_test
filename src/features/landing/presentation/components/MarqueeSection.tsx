@@ -15,8 +15,8 @@ export const MarqueeSection: React.FC = () => {
     <section className="w-full bg-gray-50/50 py-16 overflow-hidden border-t border-b border-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
         <h2 className="text-2xl font-medium text-gray-600 relative inline-block">
-          Trusted by <span className="text-[#8B2635] font-bold">80,000+</span> customers
-          <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-[2px] bg-[#8B2635]/30"></div>
+          Trusted by <span className="text-brand font-bold">80,000+</span> customers
+          <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-[2px] bg-brand/30"></div>
         </h2>
       </div>
 

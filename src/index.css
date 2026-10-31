@@ -23,7 +23,7 @@ layer(base);
 @theme {
   --font-*: initial;
   --font-outfit: Outfit, sans-serif;
-  --color-brand: #8B2635;
+  --color-brand: #843030;
   --color-brand-dark: #6E1D29;
   --color-brand-light: #FCEEF0;
   --color-brand-orange: #E8702A;
@@ -837,7 +837,7 @@ H1 {
 H2 {
 }
 
-H3 {
+/* H3 {
   font-size: 30px;
   font-weight: 600;
 }
@@ -850,7 +850,7 @@ H4 {
 h5 {
   font-size: 20px;
   font-weight: 600;
-}
+} */
 
 /* .zoom-50{
   zoom:50%

@@ -34,7 +34,7 @@ export const PromotionsSection: React.FC = () => {
             Don't miss this opportunity to elevate your workspace experience at unbeatable value.
           </p>
         </div>
-        <button onClick={handleSeeAll} className="bg-[#FCEEF0] text-[#8B2635] text-xs font-semibold px-5 py-1.5 rounded hover:bg-pink-100 transition">
+        <button onClick={handleSeeAll} className="bg-[#FCEEF0] text-brand text-xs font-semibold px-5 py-1.5 rounded hover:bg-pink-100 transition">
           See All
         </button>
       </div>

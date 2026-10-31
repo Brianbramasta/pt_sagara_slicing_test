@@ -30,7 +30,7 @@ export const BestDealsSection: React.FC = () => {
             Take advantage of our special promotions and enjoy exceptional savings on your workspace.
           </p>
         </div>
-        <button className="bg-[#FCEEF0] text-[#8B2635] text-xs font-semibold px-5 py-1.5 rounded hover:bg-pink-100 transition">
+        <button className="bg-[#FCEEF0] text-brand text-xs font-semibold px-5 py-1.5 rounded hover:bg-pink-100 transition">
           See All Deals
         </button>
       </div>
