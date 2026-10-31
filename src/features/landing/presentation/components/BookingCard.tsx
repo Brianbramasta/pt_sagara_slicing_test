@@ -18,13 +18,7 @@ export const BookingCard: React.FC<BookingCardProps> = ({ productName }) => {
       <div className="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 p-6 sticky top-8">
         <p className="text-gray-500 text-sm mb-4">Select date to Book</p>
 
-        <input
-          type="text"
-          placeholder="Select Date"
-          value={selectedDate}
-          onChange={(e) => setSelectedDate(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-200 rounded-md text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
-        />
+      
 
         <button
           onClick={handleBookClick}
