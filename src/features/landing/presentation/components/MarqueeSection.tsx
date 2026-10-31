@@ -25,7 +25,7 @@ export const MarqueeSection: React.FC = () => {
         <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
         <div
-          className="flex animate-marquee whitespace-nowrap items-center min-w-full justify-around gap-16 pr-16"
+          className="flex animate-marquee whitespace-nowrap items-center min-w-full justify-around gap-16 pr-16 opacity-25"
           style={{ animation: "marquee 30s linear infinite" }}
         >
           {logos.map((logo, index) => (
@@ -43,7 +43,7 @@ export const MarqueeSection: React.FC = () => {
         </div>
 
         <div
-          className="flex animate-marquee whitespace-nowrap items-center min-w-full justify-around gap-16 pr-16"
+          className="flex animate-marquee whitespace-nowrap items-center min-w-full justify-around gap-16 pr-16 opacity-25"
           aria-hidden="true"
           style={{ animation: "marquee 30s linear infinite" }}
         >

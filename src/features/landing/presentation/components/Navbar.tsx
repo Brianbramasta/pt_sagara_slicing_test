@@ -26,11 +26,9 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white border-b border-gray-100 py-4 px-6 md:px-12 flex justify-between items-center z-50 relative">
-      <div className="flex flex-col items-start">
-        {/* <h1 className="text-2xl font-bold text-brand tracking-tighter leading-none">CEO SUITE</h1>
-        <p className="text-[6px] text-gray-500 tracking-[0.2em] uppercase mt-0.5">First Choice for Global Workplace</p> */}
+<Link to="/" className="flex flex-col items-start cursor-pointer">
         <img src="/images/logo/logo.png" alt="CEO SUITE Logo" className="h-10" />
-      </div>
+      </Link>
 
       <div className="hidden md:flex space-x-8 text-[13px] text-gray-600 font-medium">
         <a href="#" className="hover:text-brand transition">Workspaces</a>

@@ -16,7 +16,7 @@ export const CorporatePartnersSection: React.FC = () => {
       description:
         "As a valued member, you'll enjoy a range of benefits designed to enhance your experience and provide exceptional value.",
       imageSrc:
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80",
       showLogoBadge: true,
     },
     {

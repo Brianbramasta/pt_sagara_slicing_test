@@ -39,7 +39,9 @@ export const BrowseSpaces: React.FC = () => {
             </p>
           </div>
           <button onClick={handleCheckAvailability} className="bg-[#E8702A] text-white py-3 text-sm font-medium hover:bg-orange-600 transition flex justify-center items-center gap-2 w-[75%]">
-            Check availability <span>&#62;</span>
+            Check availability <span><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+          </svg></span>
           </button>
           <div className="absolute top-2 right-2 opacity-10">
             <svg width="96" height="83" viewBox="0 0 96 83" fill="none" xmlns="http://www.w3.org/2000/svg">
