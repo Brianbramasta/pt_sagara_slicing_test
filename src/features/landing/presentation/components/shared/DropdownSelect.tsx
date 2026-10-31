@@ -73,11 +73,11 @@ export const DropdownSelect: React.FC<DropdownSelectProps> = ({
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <label className="block text-xs font-medium text-gray-700 mb-1.5">{label}</label>
+      <label className="block text-xs font-medium text-gray-700 mb-2">{label}</label>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full bg-white rounded-lg flex justify-between items-center px-3 py-2.5 shadow-sm focus:outline-none border border-transparent hover:border-gray-200 transition text-gray-800 text-sm"
+        className="w-full flex items-center border border-gray-200 rounded-md px-3 py-2.5 bg-white shadow-sm focus-within:border-brand focus-within:ring-1 focus-within:ring-brand transition "
       >
         <div className="flex items-center">
           <svg className="w-5 h-5 text-brand mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

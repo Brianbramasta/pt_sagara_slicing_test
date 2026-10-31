@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { DropdownSelect, DateRangePicker } from "./shared";
+import { DropdownSelect, DateRangePicker, InputField, LocationIcon, LocationIconBrand } from "./shared";
 import { useIsAuthenticated } from "@/features/auth";
 
 interface SearchFormValues {
@@ -68,7 +68,7 @@ export const HeroSection: React.FC = () => {
             <span className="relative inline-block">
               Elevate Your Workspace
               <svg
-                className="absolute -bottom-2 left-0 w-full h-3 text-brand-stroke"
+                className="absolute -bottom-2 left-0 w-full h-3 text-brand"
                 preserveAspectRatio="none"
                 viewBox="0 0 200 12"
                 fill="none"
@@ -87,82 +87,27 @@ export const HeroSection: React.FC = () => {
             <form className="flex flex-col">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-[13px] text-gray-700 mb-2">Select Location</label>
-                  <div className="flex items-center border border-gray-200 rounded-md px-3 py-2.5 bg-white shadow-sm focus-within:border-brand focus-within:ring-1 focus-within:ring-brand transition">
-                    <svg className="w-4 h-4 text-brand mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                    <input
-                      type="text"
-                      value="Jakarta, Wisma GKBI"
-                      className="w-full bg-transparent text-[13px] text-gray-800 focus:outline-none"
-                      readOnly
-                    />
-                  </div>
-                </div>
-
+                <label className="block text-[13px] text-gray-700 mb-2">Select Location</label>
+                <InputField
+                  value="Jakarta, Wisma GKBI"
+                  icon={<LocationIconBrand />}
+                  readOnly
+                />
+              </div>
                 <div>
-                  <label className="block text-[13px] text-gray-700 mb-2">Space Type</label>
-                  <div className="relative flex items-center border border-gray-200 rounded-md px-3 py-2.5 bg-white shadow-sm focus-within:border-brand focus-within:ring-1 focus-within:ring-brand transition">
-                    <svg
-                      className="w-4 h-4 text-brand mr-2 flex-shrink-0"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" />
-                      <path d="M9 3v18" />
-                      <path d="M14 12h.01" />
-                    </svg>
-                    <select className="w-full bg-transparent text-[13px] text-gray-800 focus:outline-none appearance-none cursor-pointer">
-                      <option>All Space</option>
-                      <option>Private Office</option>
-                      <option>Co-working</option>
-                    </select>
-                    <svg
-                      className="w-4 h-4 text-gray-500 absolute right-3 pointer-events-none"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
+                  <DropdownSelect
+                    label="Space Type"
+                    defaultValue="All Space"
+                    options={spaceTypeOptions}
+                  />
                 </div>
-
-                <div>
-                  <label className="block text-[13px] text-gray-700 mb-2">Select Date</label>
-                  <div className="flex items-center border border-gray-200 rounded-md px-3 py-2.5 bg-white shadow-sm focus-within:border-brand focus-within:ring-1 focus-within:ring-brand transition">
-                    <svg
-                      className="w-4 h-4 text-brand mr-2 flex-shrink-0"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                      <line x1="16" y1="2" x2="16" y2="6" />
-                      <line x1="8" y1="2" x2="8" y2="6" />
-                      <line x1="3" y1="10" x2="21" y2="10" />
-                    </svg>
-                    <input
-                      type="text"
-                      value="Mon, 17 August 2024 - Tue, 18 August 2024"
-                      className="w-full bg-transparent text-[12px] text-gray-800 focus:outline-none"
-                      readOnly
-                    />
-                  </div>
-                </div>
+              <div>
+                <label className="block text-[13px] text-gray-700 mb-2">Select Date</label>
+                <DateRangePicker
+                  value="Mon, 17 August 2024 - Tue, 18 August 2024"
+                  // readOnly
+                />
+              </div>
               </div>
 
               <div className="mt-5 flex justify-end">
@@ -205,32 +150,19 @@ export const HeroSection: React.FC = () => {
           <form className="space-y-4">
             <div>
               <label className="block text-xs font-medium text-gray-700 mb-1.5">Select City</label>
-              <div className="relative bg-white rounded flex items-center px-3 py-2.5">
-                <span className="text-gray-400 mr-2 text-sm">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 11.5C11.337 11.5 10.7011 11.2366 10.2322 10.7678C9.76339 10.2989 9.5 9.66304 9.5 9C9.5 8.33696 9.76339 7.70107 10.2322 7.23223C10.7011 6.76339 11.337 6.5 12 6.5C12.663 6.5 13.2989 6.76339 13.7678 7.23223C14.2366 7.70107 14.5 8.33696 14.5 9C14.5 9.3283 14.4353 9.65339 14.3097 9.95671C14.1841 10.26 13.9999 10.5356 13.7678 10.7678C13.5356 10.9999 13.26 11.1841 12.9567 11.3097C12.6534 11.4353 12.3283 11.5 12 11.5ZM12 2C10.1435 2 8.36301 2.7375 7.05025 4.05025C5.7375 5.36301 5 7.14348 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 7.14348 18.2625 5.36301 16.9497 4.05025C15.637 2.7375 13.8565 2 12 2Z"
-                    fill="#843030"
-                  />
-                </svg>
-                </span>
-                <input
-                  type="text"
-                  value={searchValues.city}
-                  onChange={(e) => setSearchValues({ ...searchValues, city: e.target.value })}
-                  className="w-full bg-transparent text-sm focus:outline-none text-gray-800"
-                />
-              </div>
+              <InputField
+                value={searchValues.city}
+                onChange={(val) => setSearchValues({ ...searchValues, city: val })}
+                containerClassName="relative bg-white rounded"
+                icon={<LocationIcon />}
+              />
             </div>
             <div>
+              <label className="block text-xs font-medium text-gray-700 mb-1.5">Select Date</label>
               <DateRangePicker value={searchValues.date} onChange={handleDateChange} />
             </div>
             <div>
+              
               <DropdownSelect
                 label="Space Type"
                 defaultValue="All Space"

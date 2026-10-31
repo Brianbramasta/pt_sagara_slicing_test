@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <>
-      <PageMeta title="HRIS" description="This is HRIS" />
+      <PageMeta title="CEO SUITE" description="This is CEO SUITE" />
       <Router>
         <ScrollToTop />
         <AppRoutes />
