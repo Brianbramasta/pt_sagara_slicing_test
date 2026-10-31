@@ -79,8 +79,13 @@ export const ProductDetailPage: React.FC = () => {
             <div className="lg:col-span-2">
               <ProductHeader product={product} />
               <PriceSection product={product} />
-            
-            <AddOnsSection addOns={product.addOns} />
+              <div className="w-full h-px bg-gray-200/60 my-5"></div>
+              <div className="">
+                <h2 className="text-lg font-bold text-gray-900 mb-4">Details</h2>
+                <p className="text-sm text-gray-500 mb-6">Meeting room with South Jakarta view, with fully amneties and fullboard facilities.</p>
+                <div className="w-full h-px bg-gray-200/60 my-2"></div>
+              </div>
+              <AddOnsSection addOns={product.addOns} />
             </div>
             
             <BookingCard productName={product.title} />

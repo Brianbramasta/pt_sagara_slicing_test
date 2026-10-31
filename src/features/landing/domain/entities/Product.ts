@@ -38,11 +38,12 @@ export interface SimilarSpace {
   title: string;
   type: string;
   typeColor: string;
-  icon: string;
+  icon?: string | React.ReactNode;
   people: number;
   pricePeriod: string;
   price: string;
+  priceDiscount?: string;
   hourlyPrice?: string;
-  hasDiscount: boolean;
+  hasDiscount?: boolean;
   imageSrc: string;
 }

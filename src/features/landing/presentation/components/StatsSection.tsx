@@ -49,7 +49,7 @@ export const StatsSection: React.FC = () => {
             <span className="text-sm font-medium text-white/90">Why CEO SUITE?</span>
             <div className="h-[1px] bg-white/40 w-16"></div>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight text-white">
             We revolutionize your<br />workspace
           </h2>
           <p className="text-white/80 text-[13px] leading-relaxed mb-5">

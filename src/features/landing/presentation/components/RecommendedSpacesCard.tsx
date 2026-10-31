@@ -1,17 +1,44 @@
+import { IconMeetingRoom } from "@/icons/components/icons/IconMeetingRoom";
+import { IconPrivateOffice } from "@/icons/components/icons/IconPrivateOffice";
+import { IconCoworking } from "@/icons/components/icons/IconCoworking";
+
 interface RecommendedSpacesCardProps {
   title: string;
   type: string;
   typeColor: string;
-  icon: React.ReactNode;
+  icon?: string | React.ReactNode;
   people: number;
   pricePeriod: string;
   price: string;
+  priceDiscount?: string;
   hourlyPrice?: string;
   hasDiscount?: boolean;
   imageSrc: string;
-  shownPrice?: boolean;
-  priceDiscount?: string;
+  productId?: string;
 }
+
+const getTypeBgColor = (typeColor: string): string => {
+  if (typeColor === 'brand') return 'bg-brand/10';
+  if (typeColor === 'blue-500') return 'bg-blue-500/10';
+  return 'bg-green-500/10';
+};
+
+const getIconComponent = (icon?: string | React.ReactNode): React.ReactNode => {
+  if (!icon) return null;
+  if (typeof icon === 'string') {
+    switch (icon) {
+      case 'meeting-room':
+        return <IconMeetingRoom />;
+      case 'office':
+        return <IconPrivateOffice />;
+      case 'coworking':
+        return <IconCoworking />;
+      default:
+        return null;
+    }
+  }
+  return icon;
+};
 
 export const RecommendedSpacesCard: React.FC<RecommendedSpacesCardProps> = ({
   title,
@@ -21,11 +48,13 @@ export const RecommendedSpacesCard: React.FC<RecommendedSpacesCardProps> = ({
   people,
   pricePeriod,
   price,
+  priceDiscount,
   hourlyPrice,
   hasDiscount = false,
-  imageSrc,
-  priceDiscount
+  imageSrc
 }) => {
+  const iconNode = getIconComponent(icon);
+  
   return (
     <div className="border border-gray-100 rounded-lg overflow-hidden bg-white shadow-lg hover:shadow transition h-full">
       <img src={imageSrc} alt={title} className="w-full h-40 object-cover p-2" />
@@ -33,9 +62,9 @@ export const RecommendedSpacesCard: React.FC<RecommendedSpacesCardProps> = ({
         <div className="flex justify-between items-center mb-2">
           <div>
             <h3 className="font-bold text-sm text-gray-900 leading-tight">{title}</h3>
-            <span className={`text-${typeColor} text-[10px] flex items-center mt-1 gap-2 ${typeColor=== 'brand' ? 'bg-brand/10' : typeColor=== `blue-500`? 'bg-blue-500/10' : 'bg-green-500/10'} px-2 py-0.5 rounded-full`}>
+            <span className={`text-${typeColor} text-[10px] flex items-center mt-1 gap-2 ${getTypeBgColor(typeColor)} px-2 py-0.5 rounded-full`}>
               <span className="w-4 h-4 mr-1.5 top-[-5px] relative" style={{ zoom: 0.5 }}>
-                {icon}
+                {iconNode}
               </span>
               {type}
             </span>
@@ -46,13 +75,12 @@ export const RecommendedSpacesCard: React.FC<RecommendedSpacesCardProps> = ({
         </div>
         <div className="mt-4">
           <p className="text-[10px] text-brand mb-0.5 font-medium">{pricePeriod}</p>
-           {hasDiscount && priceDiscount ? (
+          {hasDiscount && priceDiscount ? (
             <>
             <p className="text-[10px] text-gray-400 line-through">{price}</p>
             <div className="font-bold text-sm text-brand">{priceDiscount}</div>
             </>
           ):(<><div className="font-bold text-sm text-brand">{price}</div></>)}
-          
           {hasDiscount && hourlyPrice && (
             <p className="text-[10px] text-gray-800 "><span className="text-gray-400">Hourly</span> {hourlyPrice}</p>
           )}

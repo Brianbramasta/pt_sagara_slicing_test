@@ -33,7 +33,7 @@ export const BrowseSpaces: React.FC = () => {
         ))}
         <div className="bg-brand text-white flex flex-col justify-between overflow-hidden h-full relative shadow-2xl">
           <div className="p-6 text-center flex-grow flex flex-col justify-center relative z-10">
-            <h3 className="font-bold text-lg mb-2">All Space</h3>
+            <h3 className="font-bold text-lg mb-2 text-white">All Space</h3>
             <p className="text-xs text-white/80 leading-relaxed px-2">
               Comfortable space, Full speed wifi, Free coffe & Snack and many more
             </p>

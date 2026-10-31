@@ -831,8 +831,12 @@ span.flatpickr-weekday,
   text-align: center;
 }
 
-H1 {
-  color: #3D3D3D;
+h1:not(.text-white), 
+h2:not(.text-white), 
+h3:not(.text-white), 
+h4:not(.text-white), 
+h5:not(.text-white) { 
+    color: #3D3D3D; 
 }
 
 H2 {

@@ -43,6 +43,12 @@ export const IconCube = () => (
 );
 
 export const IconSun = () => (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m8.66-9H3M4.34 12H21M12 8a4 4 0 100 8 4 4 0 000-8zM6 12a6 6 0 0112 0" />
+  </svg>
+);
+
+export const IconTable = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2 7V17C2 17.55 2.45 18 3 18C3.55 18 4 17.55 4 17V8H14V17C14 17.55 14.45 18 15 18C15.55 18 16 17.55 16 17V16H20V17C20 17.55 20.45 18 21 18C21.55 18 22 17.55 22 17V7C22 6.45 21.55 6 21 6H3C2.45 6 2 6.45 2 7ZM20 8V10H16V8H20ZM16 14V12H20V14H16Z" fill="#6D6D6D"/>
 </svg>
