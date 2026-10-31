@@ -11,7 +11,7 @@ const DUMMY_PRODUCTS: ProductDTO[] = [
       "Jl. Jend. Sudirman No.28, RT.14/RW.1, Bend. Hilir, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10210",
     images: [
       { id: "img-1", url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80", isMain: true },
-      { id: "img-2", url: "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80", isMain: false },
+      { id: "img-2", url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80", isMain: false },
       { id: "img-3", url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80", isMain: false },
       { id: "img-4", url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80", isMain: false },
       { id: "img-5", url: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80", isMain: false },
