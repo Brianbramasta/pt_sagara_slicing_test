@@ -27,7 +27,7 @@ export const LoginForm: React.FC = () => {
     localStorage.setItem("user", JSON.stringify(dummyUser));
     
     login(dummyUser, dummyToken);
-    navigate("/");
+    navigate(-1);
   };
 
 return (
