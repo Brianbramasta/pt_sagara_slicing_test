@@ -5,7 +5,7 @@ interface BookingCardProps {
 }
 
 export const BookingCard: React.FC<BookingCardProps> = ({ productName }) => {
-  const [selectedDate, setSelectedDate] = useState<string>("");
+  const [selectedDate, _setSelectedDate] = useState<string>("");
 
   const handleBookClick = () => {
     if (selectedDate) {

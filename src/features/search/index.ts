@@ -1,0 +1,1 @@
+export { SearchPage } from "./presentation/pages/SearchPage";

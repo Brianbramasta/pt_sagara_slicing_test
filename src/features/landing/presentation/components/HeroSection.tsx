@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { DropdownSelect, DateRangePicker, InputField, LocationIcon, LocationIconBrand } from "./shared";
 import { useIsAuthenticated } from "@/features/auth";
 
@@ -22,10 +23,11 @@ export const HeroSection: React.FC = () => {
     date: { start: "Mon, 17 Agustus 2024", end: "Tue, 18 Agustus 2024" },
     spaceType: "All Space",
   });
+  const navigate = useNavigate();
   const isAuthenticated = useIsAuthenticated();
 
   const handleSearch = () => {
-    console.log("Search:", searchValues);
+    navigate("/search");
   };
 
   const handleSpaceTypeChange = useCallback((selectedLabels: string[]) => {

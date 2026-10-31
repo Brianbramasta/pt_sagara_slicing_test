@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results with Map - CEO SUITE</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#80282C', // Warna maroon khas CEO SUITE
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+  <!-- Container Utama dengan Layout 2 Kolom (Kiri: Konten, Kanan: Map) -->
+  <div class="flex flex-col lg:flex-row min-h-screen">
+    
+    <!-- ================= BAGIAN KIRI: SEARCH & HASIL PENCARIAN ================= -->
+    <div class="w-full grid grid-cols-2 gap-8 px-6 lg:px-12 py-8 overflow-y-auto">
+      
+      <div class="col-span-1">
+      <!-- 1. Header & Filter Search Section -->
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold text-gray-900 mb-6">Search Results</h1>
+        
+        <!-- Filter Bar -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 items-center">
+          
+          <!-- Select City -->
+          <div>
+            <label class="block text-[11px] font-semibold text-gray-400 mb-1">Select City</label>
+            <div class="flex items-center justify-between border-b border-gray-200 pb-1.5 cursor-pointer">
+              <div class="flex items-center gap-1.5 text-xs font-medium text-gray-800">
+                <span class="text-brand">📍</span>
+                <span>Jakarta</span>
+              </div>
+              <span class="text-gray-400 text-[10px]">▼</span>
+            </div>
+          </div>
+
+          <!-- Select Region -->
+          <div>
+            <label class="block text-[11px] font-semibold text-gray-400 mb-1">Select Region</label>
+            <div class="flex items-center justify-between border-b border-gray-200 pb-1.5 cursor-pointer">
+              <div class="flex items-center gap-1.5 text-xs font-medium text-gray-800">
+                <span class="text-brand">📍</span>
+                <span>All</span>
+              </div>
+              <span class="text-gray-400 text-[10px]">▼</span>
+            </div>
+          </div>
+
+          <!-- Space Type -->
+          <div>
+            <label class="block text-[11px] font-semibold text-gray-400 mb-1">Space Type</label>
+            <div class="flex items-center justify-between border-b border-gray-200 pb-1.5 cursor-pointer">
+              <div class="flex items-center gap-1.5 text-xs font-medium text-gray-800">
+                <span class="text-brand">🏢</span>
+                <span>All Space</span>
+              </div>
+              <span class="text-gray-400 text-[10px]">▼</span>
+            </div>
+          </div>
+
+          <!-- Select Date -->
+          <div>
+            <label class="block text-[11px] font-semibold text-gray-400 mb-1">Select Date</label>
+            <div class="border border-gray-200 rounded-lg px-2.5 py-1.5 flex items-center gap-1.5 text-[11px] font-medium text-gray-700 bg-gray-50/50 cursor-pointer">
+              <span class="text-brand">📅</span>
+              <span class="truncate">Mon, 17 Aug - Tue, 18 Aug</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+     
+
+      <!-- 2. All Spaces Section -->
+      <div class="mb-14">
+        <div class="flex justify-between items-end mb-6">
+          <div>
+            <h2 class="text-lg font-bold text-gray-900">All Spaces</h2>
+            <p class="text-xs text-gray-400 mt-0.5">Explore top-rated meeting rooms and workspaces.</p>
+          </div>
+          <button class="flex items-center gap-1.5 text-xs font-medium text-gray-600 bg-white border border-gray-200 px-3 py-1.5 rounded-lg shadow-sm hover:bg-gray-50 transition">
+            <span>⚙️</span> Filter
+          </button>
+        </div>
+
+        <!-- Grid Kartu Ruangan (6 Cards) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <!-- Card 1 -->
+          <div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <div class="relative h-36 rounded-xl overflow-hidden mb-2.5">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80" alt="Space" class="w-full h-full object-cover">
+              </div>
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-gray-900 text-xs">AXA Tower Meeting Room</h3>
+                <span class="text-[9px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">4 People</span>
+              </div>
+              <p class="text-[10px] text-brand flex items-center gap-1 mb-2">🗄️ Office</p>
+            </div>
+            <div class="pt-2.5 border-t border-gray-100 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] text-gray-400 block">Daily</span>
+                <span class="text-xs font-bold text-brand">Rp2,880,000</span>
+              </div>
+              <span class="text-[9px] text-gray-400">Hourly Rp400,000</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <div class="relative h-36 rounded-xl overflow-hidden mb-2.5">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80" alt="Space" class="w-full h-full object-cover">
+              </div>
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-gray-900 text-xs">Suite 7 View</h3>
+                <span class="text-[9px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">4 People</span>
+              </div>
+              <p class="text-[10px] text-brand flex items-center gap-1 mb-2">💻 Co-Working Space</p>
+            </div>
+            <div class="pt-2.5 border-t border-gray-100 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] text-gray-400 block">Daily</span>
+                <span class="text-xs font-bold text-brand">Rp2,880,000</span>
+              </div>
+              <span class="text-[9px] text-gray-400">Hourly Rp400,000</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <div class="relative h-36 rounded-xl overflow-hidden mb-2.5">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" alt="Space" class="w-full h-full object-cover">
+              </div>
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-gray-900 text-xs">Suite VIP 5 Non View</h3>
+                <span class="text-[9px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">4 People</span>
+              </div>
+              <p class="text-[10px] text-brand flex items-center gap-1 mb-2">🪑 Class Room</p>
+            </div>
+            <div class="pt-2.5 border-t border-gray-100 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] text-gray-400 block">Daily</span>
+                <span class="text-xs font-bold text-brand">Rp2,880,000</span>
+              </div>
+              <span class="text-[9px] text-gray-400">Hourly Rp400,000</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <div class="relative h-36 rounded-xl overflow-hidden mb-2.5">
+                <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80" alt="Space" class="w-full h-full object-cover">
+              </div>
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-gray-900 text-xs">Suite 7 View</h3>
+                <span class="text-[9px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">4 People</span>
+              </div>
+              <p class="text-[10px] text-brand flex items-center gap-1 mb-2">📍 Seminar Room</p>
+            </div>
+            <div class="pt-2.5 border-t border-gray-100 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] text-gray-400 block">Daily</span>
+                <span class="text-xs font-bold text-brand">Rp2,880,000</span>
+              </div>
+              <span class="text-[9px] text-gray-400">Hourly Rp400,000</span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <div class="relative h-36 rounded-xl overflow-hidden mb-2.5">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80" alt="Space" class="w-full h-full object-cover">
+              </div>
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-gray-900 text-xs">Suite VIP 5 Non View</h3>
+                <span class="text-[9px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">4 People</span>
+              </div>
+              <p class="text-[10px] text-brand flex items-center gap-1 mb-2">📍 Meeting Room</p>
+            </div>
+            <div class="pt-2.5 border-t border-gray-100 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] text-gray-400 block">Daily</span>
+                <span class="text-xs font-bold text-brand">Rp2,880,000</span>
+              </div>
+              <span class="text-[9px] text-gray-400">Hourly Rp400,000</span>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <div class="relative h-36 rounded-xl overflow-hidden mb-2.5">
+                <img src="https://images.unsplash.com/photo-1505409859467-3a796fd5798e?auto=format&fit=crop&q=80" alt="Space" class="w-full h-full object-cover">
+              </div>
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-gray-900 text-xs">AXA Tower Meeting Room</h3>
+                <span class="text-[9px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">4 People</span>
+              </div>
+              <p class="text-[10px] text-brand flex items-center gap-1 mb-2">🎭 Theatre Room</p>
+            </div>
+            <div class="pt-2.5 border-t border-gray-100 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] text-gray-400 block">Daily</span>
+                <span class="text-xs font-bold text-brand">Rp2,880,000</span>
+              </div>
+              <span class="text-[9px] text-gray-400">Hourly Rp400,000</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tombol See More -->
+        <div class="flex justify-center mt-8">
+          <button class="bg-brand hover:bg-red-900 text-white text-xs font-semibold px-8 py-2.5 rounded-xl shadow transition">
+            See More
+          </button>
+        </div>
+
+      </div>
+      </div>
+
+       <div class="col-span-1">
+        <!-- ================= BAGIAN KANAN: GOOGLE MAPS / PETA ================= -->
+          <div class="w-full h-full lg:h-screen sticky top-0 bg-gray-200 border-l border-gray-200 overflow-hidden">
+            <!-- Menggunakan iframe Google Maps embed placeholder wilayah Jakarta Selatan / Sudirman -->
+            <iframe 
+              class="w-full h-full border-0 filter contrast-125 opacity-90"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2996914594247!2d106.8227033!3d-6.2240954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e490510fc7%3A0xb35a90d81d4cf273!2sAXA%20Tower!5e0!3m2!1sen!2sid!4v1650000000000!5m2!1sen!2sid" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+      </div>
+
+      <!-- 3. Other Spaces Section -->
+      <div class="col-span-2">
+        <div class="flex justify-between items-center mb-5">
+          <div>
+            <h2 class="text-lg font-bold text-gray-900">Other Spaces</h2>
+            <p class="text-xs text-gray-400 mt-0.5">Find the perfect space for your next meeting or event.</p>
+          </div>
+          <!-- Tombol Panah Slider -->
+          <div class="flex gap-2">
+            <button class="w-8 h-8 bg-gray-300 text-white rounded-lg flex items-center justify-center hover:bg-gray-400 transition text-xs">
+              &larr;
+            </button>
+            <button class="w-8 h-8 bg-brand text-white rounded-lg flex items-center justify-center hover:bg-red-900 transition text-xs">
+              &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Kategori Other Spaces -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+          
+          <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer shadow-sm">
+            <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&q=80" alt="Coworking" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-2.5 left-2.5 right-2.5 flex justify-between items-center">
+              <span class="text-white font-semibold text-[11px]">Coworking</span>
+              <span class="w-6 h-6 bg-brand text-white rounded-md flex items-center justify-center text-[10px]">&rarr;</span>
+            </div>
+          </div>
+
+          <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer shadow-sm">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" alt="Meeting Room" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-2.5 left-2.5 right-2.5 flex justify-between items-center">
+              <span class="text-white font-semibold text-[11px]">Meeting Room</span>
+              <span class="w-6 h-6 bg-brand text-white rounded-md flex items-center justify-center text-[10px]">&rarr;</span>
+            </div>
+          </div>
+
+          <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer shadow-sm">
+            <img src="https://images.unsplash.com/photo-1505409859467-3a796fd5798e?auto=format&fit=crop&q=80" alt="Board Room" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-2.5 left-2.5 right-2.5 flex justify-between items-center">
+              <span class="text-white font-semibold text-[11px]">Board Room</span>
+              <span class="w-6 h-6 bg-brand text-white rounded-md flex items-center justify-center text-[10px]">&rarr;</span>
+            </div>
+          </div>
+
+          <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer shadow-sm">
+            <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80" alt="Class Room" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-2.5 left-2.5 right-2.5 flex justify-between items-center">
+              <span class="text-white font-semibold text-[11px]">Class Room</span>
+              <span class="w-6 h-6 bg-brand text-white rounded-md flex items-center justify-center text-[10px]">&rarr;</span>
+            </div>
+          </div>
+
+          <div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer shadow-sm">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80" alt="Seminar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-2.5 left-2.5 right-2.5 flex justify-between items-center">
+              <span class="text-white font-semibold text-[11px]">Seminar</span>
+              <span class="w-6 h-6 bg-brand text-white rounded-md flex items-center justify-center text-[10px]">&rarr;</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    
+
+  </div>
+
+</body>
+</html>
