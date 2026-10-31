@@ -1,5 +1,6 @@
 import { useSpacesQuery } from "../hooks/useSpacesQuery";
-import { SpaceCard } from "./SpaceCard";
+import { SpaceCard } from "./search/SpaceCard";
+import { Space } from "../../domain/entities/Space";
 
 export const AllSpacesSection: React.FC = () => {
   const { data: spaces = [], isLoading } = useSpacesQuery();
@@ -20,7 +21,7 @@ export const AllSpacesSection: React.FC = () => {
         <div className="text-center py-8">Loading spaces...</div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {spaces.map((space) => (
+          {spaces.map((space: Space) => (
             <SpaceCard key={space.id} space={space} />
           ))}
         </div>

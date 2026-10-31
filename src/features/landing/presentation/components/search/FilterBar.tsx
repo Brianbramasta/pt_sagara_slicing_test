@@ -1,4 +1,4 @@
-import { useSearchStore } from "../store/useSearchStore";
+import { useSearchStore } from "../../store/useSearchStore";
 
 export const FilterBar: React.FC = () => {
   const { selectedCity, selectedRegion, selectedType, selectedDate } = useSearchStore();

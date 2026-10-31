@@ -1,4 +1,4 @@
-import { Space } from "../../domain/entities/Space";
+import { Space } from "../../../domain/entities/Space";
 
 interface SpaceCardProps {
   space: Space;

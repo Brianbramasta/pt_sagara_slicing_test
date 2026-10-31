@@ -4,8 +4,7 @@ import ProtectedOutlet from './ProtectedOutlet';
 import NotFound from '@/pages/OtherPage/NotFound';
 import ReferenceUiPage from '@/pages/ReferenceUiPage';
 import { KaryawanPage } from '@/features/karyawan';
-import { LandingPage, ProductDetailPage } from '@/features/landing';
-import { SearchPage } from '@/features/search';
+import { LandingPage, ProductDetailPage, SearchPage } from '@/features/landing';
 import { SignInPage, SignUpPage, VerifyOtpPage, ResetPasswordPage } from '@/features/auth';
 
 export default function AppRoutes() {

@@ -1,4 +1,5 @@
-import { FilterBar, AllSpacesSection, MapSection, OtherSpacesSection } from "../components";
+import { AllSpacesSection, MapSection, OtherSpacesSection } from "../components";
+import { FilterBar } from "../components/search/FilterBar";
 
 export const SearchPage: React.FC = () => {
   return (
