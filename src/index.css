@@ -27,6 +27,7 @@ layer(base);
   --color-brand-dark: #6E1D29;
   --color-brand-light: #FCEEF0;
   --color-brand-orange: #E8702A;
+  --colo-brand-primary-this: #10375C;
 
   --breakpoint-*: initial;
   --breakpoint-2xsm: 375px;

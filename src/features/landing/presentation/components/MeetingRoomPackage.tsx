@@ -2,7 +2,7 @@ export const MeetingRoomPackage: React.FC = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div className="grid grid-cols-2 gap-4 h-[500px]">
+        <div className="grid grid-cols-2 gap-4 ">
           <div className="flex flex-col gap-4 pt-8">
             <img
               src="https://images.unsplash.com/photo-1503423571797-2d2bb372094a?auto=format&fit=crop&q=80"
