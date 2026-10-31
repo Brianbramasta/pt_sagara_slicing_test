@@ -9,7 +9,7 @@ import { BookingCard } from "../components/BookingCard";
 import { AddOnsSection } from "../components/AddOnsSection";
 import { LocationSection } from "../components/LocationSection";
 import { SimilarSpacesSection } from "../components/SimilarSpacesSection";
-import { IconCalendar } from "../components/Icons";
+import { DateRangePicker } from "../components/shared/DateRangePicker";
 
 export const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -54,18 +54,10 @@ export const ProductDetailPage: React.FC = () => {
     <LandingLayout>
       
       <div className="bg-brand py-6 px-4 md:px-12 w-full">
-        <div className="max-w-7xl mx-auto">
-          <label className="block text-white text-xs font-medium mb-2">Select Date</label>
-          <div className="relative w-full max-w-md">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <IconCalendar />
-            </div>
-            <input
-              type="text"
-              placeholder="Select Date"
-              className="w-full pl-10 pr-4 py-2.5 bg-white rounded-md text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-white/50"
-              readOnly
-            />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[35%]">
+            <label className="text-white font-regular mb-1 block">Select Date</label>
+          <DateRangePicker value="" />
           </div>
         </div>
       </div>

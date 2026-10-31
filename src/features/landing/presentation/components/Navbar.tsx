@@ -25,70 +25,73 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-100 py-4 px-6 md:px-12 flex justify-between items-center z-50 relative">
-<Link to="/" className="flex flex-col items-start cursor-pointer">
-        <img src="/images/logo/logo.png" alt="CEO SUITE Logo" className="h-10" />
-      </Link>
+    <nav className="bg-white border-b border-gray-100 ">
+      <section className="py-4 px-6 md:px-12 flex justify-between items-center z-50 relative max-w-7xl mx-auto w-full">
+           <Link to="/" className="flex flex-col items-start cursor-pointer">
+              <img src="/images/logo/logo.png" alt="CEO SUITE Logo" className="h-10 lg:left-[-15px] lg:relative" />
+            </Link>
 
-      <div className="hidden md:flex space-x-8 text-[13px] text-gray-600 font-medium">
-        <a href="#" className="hover:text-brand transition">Workspaces</a>
-        <a href="#" className="hover:text-brand transition">Services</a>
-        <a href="#" className="hover:text-brand transition">Package</a>
-        <a href="#" className="hover:text-brand transition">Promotions & Deals!</a>
-        <a href="#" className="hover:text-brand transition">News</a>
-      </div>
+            <div className="hidden md:flex space-x-8 text-[13px] text-gray-600 font-medium">
+              <a href="#" className="hover:text-brand transition">Workspaces</a>
+              <a href="#" className="hover:text-brand transition">Services</a>
+              <a href="#" className="hover:text-brand transition">Package</a>
+              <a href="#" className="hover:text-brand transition">Promotions & Deals!</a>
+              <a href="#" className="hover:text-brand transition">News</a>
+            </div>
 
-      {isAuthenticated ? (
-        <div className="relative" ref={dropdownRef}>
-          <div
-            className="flex items-center space-x-3 cursor-pointer group"
-            onClick={() => setShowDropdown(!showDropdown)}
-          >
-            <div className="w-8 h-8 rounded-full bg-[#8E5A9D] text-white flex items-center justify-center text-xs font-medium">
-              {user?.fullName?.charAt(0) || "U"}
-            </div>
-            <div className="hidden sm:flex items-center space-x-1 text-sm text-gray-700 group-hover:text-brand transition">
-              <span>{user?.fullName || "User"}</span>
-              <svg
-                className="w-4 h-4 text-gray-400 group-hover:text-brand"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </div>
-          </div>
+            {isAuthenticated ? (
+              <div className="relative" ref={dropdownRef}>
+                <div
+                  className="flex items-center space-x-3 cursor-pointer group"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                >
+                  <div className="w-8 h-8 rounded-full bg-[#8E5A9D] text-white flex items-center justify-center text-xs font-medium">
+                    {user?.fullName?.charAt(0) || "U"}
+                  </div>
+                  <div className="hidden sm:flex items-center space-x-1 text-sm text-gray-700 group-hover:text-brand transition">
+                    <span>{user?.fullName || "User"}</span>
+                    <svg
+                      className="w-4 h-4 text-gray-400 group-hover:text-brand"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
 
-          {showDropdown && (
-            <div className="absolute right-0 mt-3 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-              <button
-                onClick={handleLogoutClick}
-                className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600"
-              >
-                Logout
-              </button>
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="flex items-center space-x-6 text-sm font-medium">
-          <Link to="/signin" className="text-gray-600 hover:text-brand transition">
-            Sign In
-          </Link>
-          <Link
-            to="/signup"
-            className="bg-brand text-white px-6 py-2 rounded hover:bg-brand-dark transition"
-          >
-            Sign Up
-          </Link>
-        </div>
-      )}
+                {showDropdown && (
+                  <div className="absolute right-0 mt-3 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                    <button
+                      onClick={handleLogoutClick}
+                      className="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="flex items-center space-x-6 text-sm font-medium">
+                <Link to="/signin" className="text-gray-600 hover:text-brand transition">
+                  Sign In
+                </Link>
+                <Link
+                  to="/signup"
+                  className="bg-brand text-white px-6 py-2 rounded hover:bg-brand-dark transition"
+                >
+                  Sign Up
+                </Link>
+              </div>
+            )}
+      </section>
+     
     </nav>
   );
 };
