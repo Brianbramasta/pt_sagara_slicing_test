@@ -14,8 +14,8 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
         <img src={mainImage.url} alt="Main Image" className="w-full h-full object-cover" />
       </div>
 
-      <div className="w-full md:w-1/3 grid grid-cols-2 grid-rows-2 gap-4 h-64 md:h-full">
-        {images.filter((img) => !img.isMain).slice(0, 4).map((img, index) => (
+      <div className="w-full md:w-1/3 grid grid-cols-2 grid-rows-2 gap-4 md:h-full">
+        {images.filter((img) => !img.isMain).slice(0, 3).map((img, index) => (
           <div key={img.id} className="rounded-xl overflow-hidden shadow-sm">
             <img src={img.url} alt={`Image ${index + 2}`} className="w-full h-full object-cover" />
           </div>

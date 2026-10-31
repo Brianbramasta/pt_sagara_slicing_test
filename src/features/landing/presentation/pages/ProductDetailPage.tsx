@@ -57,7 +57,7 @@ export const ProductDetailPage: React.FC = () => {
   return (
     <LandingLayout>
       
-      <div className="bg-brand py-6 px-4 md:px-12 w-full">
+      <div className="bg-brand py-6 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2 lg:col-span-1">
@@ -80,7 +80,7 @@ export const ProductDetailPage: React.FC = () => {
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-3">
+          <div className="col-span-3">
               
             <PhotoGallery images={product.images} />
           </div>
@@ -101,10 +101,10 @@ export const ProductDetailPage: React.FC = () => {
             
           </div>
             
-          <div className="lg:col-span-3">
+          <div className="col-span-3">
             <LocationSection product={product} />
           </div>
-          <div className="lg:col-span-3">
+          <div className="col-span-3">
 
             <SimilarSpacesSection similarSpaces={product.similarSpaces} />
           </div>
