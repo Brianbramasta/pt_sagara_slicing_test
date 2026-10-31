@@ -720,6 +720,19 @@ span.flatpickr-weekday,
   @apply !h-auto !w-auto;
 }
 
+.other-spaces-prev,
+.other-spaces-next {
+  position: static !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .carouselTwo .swiper-button-next:after,
 .carouselTwo .swiper-button-prev:after,
 .carouselFour .swiper-button-next:after,
