@@ -60,7 +60,7 @@ export const ProductDetailPage: React.FC = () => {
       <div className="bg-brand py-6 px-4 md:px-12 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4">
-            <div className="col-span-1">
+            <div className="col-span-2 lg:col-span-1">
               <label className="text-white font-regular mb-1 block">Select Date</label>
               <DateRangePicker 
                 value={selectedDate} 
@@ -68,7 +68,7 @@ export const ProductDetailPage: React.FC = () => {
               />
             </div>
             {selectedDate && (
-              <div className="col-span-1">
+              <div className="col-span-2 lg:col-span-1">
                 <TimePicker 
                   selectedTime={selectedTime}
                   onSelect={setSelectedTime}

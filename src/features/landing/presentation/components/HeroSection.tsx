@@ -147,7 +147,7 @@ export const HeroSection: React.FC = () => {
           />
         </div>
 
-        <div className="bg-[#FCEEF0] p-8 rounded-2xl w-[90%] md:w-[520px] shadow-sm md:absolute top-8 left-0 z-10 mt-6 md:mt-0">
+        <div className="bg-[#FCEEF0] p-8 rounded-2xl w-full lg:w-[45%] md:w-[520px] shadow-sm md:absolute top-8 left-0 z-10 mt-6 md:mt-0">
           <h3 className="font-bold text-xl mb-5 text-gray-900">Find your space now</h3>
           <form className="space-y-4">
             <div>

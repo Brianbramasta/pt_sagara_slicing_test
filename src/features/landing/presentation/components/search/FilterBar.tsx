@@ -95,8 +95,8 @@ export const FilterBar: React.FC = () => {
   const selectedRegionIds = [regionLabelToId[selectedRegion] || "all"];
 
   return (
-    <div className="rounded-2xl p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 items-center">
-      <div>
+    <div className="rounded-2xl py-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 items-center">
+      <div className="col-span-3 lg:col-span-1">
         <DropdownSelect
           label="Select City"
           defaultValue="Jakarta"
@@ -107,7 +107,7 @@ export const FilterBar: React.FC = () => {
         />
       </div>
 
-      <div>
+      <div className="col-span-3 lg:col-span-1">
         <DropdownSelect
           label="Select Region"
           defaultValue="All"
@@ -118,7 +118,7 @@ export const FilterBar: React.FC = () => {
         />
       </div>
 
-      <div>
+      <div className="col-span-3 lg:col-span-1">
         <DropdownSelect
           label="Space Type"
           defaultValue="All Space"
@@ -128,7 +128,7 @@ export const FilterBar: React.FC = () => {
         />
       </div>
 
-      <div className="col-span-2">
+      <div className="col-span-3 lg:col-span-2">
         <DateRangePicker
           value={parseFormattedDate(selectedDate)}
           onChange={handleDateChange}
