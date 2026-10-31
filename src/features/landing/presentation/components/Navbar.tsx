@@ -1,11 +1,14 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useIsAuthenticated, useUser, useLogout } from "@/features/auth";
 
 export const Navbar: React.FC = () => {
   const isAuthenticated = useIsAuthenticated();
   const user = useUser();
   const logout = useLogout();
+  const location = useLocation();
+  
+  const isActiveWorkspace = location.pathname === "/search";
   
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false); // State untuk menu mobile
@@ -63,7 +66,7 @@ export const Navbar: React.FC = () => {
 
         {/* Menu Navigasi Desktop (Hidden di mobile) */}
         <div className="hidden md:flex space-x-8 text-[13px] text-gray-600 font-medium">
-          <Link to="/workspaces" className="hover:text-brand transition">Workspaces</Link>
+          <Link to="/workspaces" className={`hover:text-brand transition ${isActiveWorkspace ? "text-brand font-semibold" : ""}`}>Workspaces</Link>
           <Link to="/services" className="hover:text-brand transition">Services</Link>
           <Link to="/package" className="hover:text-brand transition">Package</Link>
           <Link to="/promotions" className="hover:text-brand transition">Promotions & Deals!</Link>
@@ -131,7 +134,7 @@ export const Navbar: React.FC = () => {
             <Link 
               to="/workspaces" 
               onClick={() => setShowMobileMenu(false)}
-              className="hover:text-brand transition py-1"
+              className={`hover:text-brand transition py-1 ${isActiveWorkspace ? "text-brand font-semibold" : ""}`}
             >
               Workspaces
             </Link>
