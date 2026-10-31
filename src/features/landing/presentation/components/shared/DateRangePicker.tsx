@@ -15,11 +15,13 @@ function formatDate(date: Date): string {
 
 function parseDate(dateStr: string): Date | null {
   if (!dateStr) return null;
-  const parts = dateStr.split(" ");
-  if (parts.length < 3) return null;
+  const cleaned = dateStr.replace(/^[A-Za-z]+,?\s+/, "").trim();
+  const parts = cleaned.split(/\s+/);
+  if (parts.length < 2) return null;
   const day = parseInt(parts[0]);
   const monthName = parts[1];
-  const year = parseInt(parts[2]);
+  const currentYear = new Date().getFullYear();
+  const year = parts.length >= 3 && !isNaN(parseInt(parts[2])) ? parseInt(parts[2]) : currentYear;
   const monthIndex = monthNames.indexOf(monthName);
   if (monthIndex === -1) return null;
   return new Date(year, monthIndex, day);

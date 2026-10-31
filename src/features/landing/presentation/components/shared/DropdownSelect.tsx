@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ReactNode } from "react";
 
 interface DropdownOption {
   id: string;
@@ -12,18 +12,27 @@ interface DropdownSelectProps {
   options: DropdownOption[];
   selectedIds?: string[];
   onChange?: (selectedLabels: string[]) => void;
+  icon?: ReactNode;
+  iconClassName?: string;
 }
 
 export const DropdownSelect: React.FC<DropdownSelectProps> = ({
   label,
   defaultValue = "All Space",
   options,
-  selectedIds = [],
+  selectedIds,
   onChange,
+  icon,
+  iconClassName = "w-5 h-5 text-brand mr-3 flex-shrink-0",
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [internalSelected, setInternalSelected] = useState<string[]>(selectedIds);
+  const [internalSelected, setInternalSelected] = useState<string[]>(
+    selectedIds ?? []
+  );
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const isControlled = selectedIds !== undefined;
+  const currentSelected = isControlled ? selectedIds! : internalSelected;
 
   const closeDropdown = () => setIsOpen(false);
 
@@ -38,7 +47,7 @@ export const DropdownSelect: React.FC<DropdownSelectProps> = ({
   }, []);
 
   useEffect(() => {
-    if (onChange) {
+    if (onChange && !isControlled && internalSelected !== selectedIds) {
       const selectedLabels = options
         .filter((opt) => internalSelected.includes(opt.id))
         .map((opt) => opt.label);
@@ -46,18 +55,20 @@ export const DropdownSelect: React.FC<DropdownSelectProps> = ({
         selectedLabels.length > 0 ? selectedLabels : [defaultValue]
       );
     }
-  }, [internalSelected, options, onChange, defaultValue]);
+  }, [internalSelected, options, onChange, defaultValue, isControlled, selectedIds]);
 
   const toggleOption = (id: string) => {
-    setInternalSelected((prev) => {
-      const newSelected = prev.includes(id)
-        ? prev.filter((item) => item !== id)
-        : [...prev, id];
-      return newSelected;
-    });
+    const newSelected = currentSelected.includes(id)
+      ? currentSelected.filter((item) => item !== id)
+      : [...currentSelected, id];
+
+    if (!isControlled) {
+      setInternalSelected(newSelected);
+    }
+
     if (onChange) {
       const selectedLabels = options
-        .filter((opt) => internalSelected.includes(opt.id))
+        .filter((opt) => newSelected.includes(opt.id))
         .map((opt) => opt.label);
       onChange(
         selectedLabels.length > 0 ? selectedLabels : [defaultValue]
@@ -65,11 +76,12 @@ export const DropdownSelect: React.FC<DropdownSelectProps> = ({
     }
   };
 
-  const displayLabel =
-    options
-      .filter((opt) => internalSelected.includes(opt.id))
+  const displayLabel = () => {
+    return options
+      .filter((opt) => currentSelected.includes(opt.id))
       .map((opt) => opt.label)
       .join(", ") || defaultValue;
+  };
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -80,12 +92,15 @@ export const DropdownSelect: React.FC<DropdownSelectProps> = ({
         className="w-full flex items-center border border-gray-200 rounded-md px-3 py-2.5 bg-white shadow-sm focus-within:border-brand focus-within:ring-1 focus-within:ring-brand transition "
       >
         <div className="flex items-center">
-          <svg className="w-5 h-5 text-brand mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" />
-            <path d="M9 3v18"></path>
-            <path d="M14 12h.01"></path>
-          </svg>
-          <span className="text-gray-800 text-sm">{displayLabel}</span>
+          {icon && <span className={iconClassName}>{icon}</span>}
+          {!icon && (
+            <svg className="w-5 h-5 text-brand mr-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" />
+              <path d="M9 3v18"></path>
+              <path d="M14 12h.01"></path>
+            </svg>
+          )}
+          <span className="text-gray-800 text-sm">{displayLabel()}</span>
         </div>
         <svg className={`w-4 h-4 ml-auto transition-transform ${isOpen ? "rotate-180" : ""}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
@@ -100,13 +115,13 @@ export const DropdownSelect: React.FC<DropdownSelectProps> = ({
               type="button"
               onClick={() => toggleOption(option.id)}
               className={`w-full flex items-center px-3 py-2 text-left text-sm hover:bg-gray-50 transition ${
-                internalSelected.includes(option.id) ? "bg-brand-light" : ""
+                currentSelected.includes(option.id) ? "bg-brand-light" : ""
               }`}
             >
               <div className="relative flex items-center justify-center w-4 h-4 mr-3">
                 <input
                   type="checkbox"
-                  checked={internalSelected.includes(option.id)}
+                  checked={currentSelected.includes(option.id)}
                   readOnly
                   className="peer appearance-none w-4 h-4 border-2 border-brand rounded bg-white checked:bg-brand checked:border-brand cursor-pointer"
                 />
@@ -122,7 +137,7 @@ export const DropdownSelect: React.FC<DropdownSelectProps> = ({
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
-              <span className={internalSelected.includes(option.id) ? "text-brand font-medium" : "text-gray-700"}>{option.label}</span>
+              <span className={currentSelected.includes(option.id) ? "text-brand font-medium" : "text-gray-700"}>{option.label}</span>
             </button>
           ))}
         </div>
