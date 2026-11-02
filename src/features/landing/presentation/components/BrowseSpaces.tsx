@@ -43,7 +43,7 @@ export const BrowseSpaces: React.FC = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
           </svg></span>
           </button>
-          <div className="absolute top-2 right-2 opacity-10">
+          <div className="absolute top-2 right-2 ">
             <svg width="96" height="83" viewBox="0 0 96 83" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.2">
                 <mask id="mask0_1_24356" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0" width="96" height="83">

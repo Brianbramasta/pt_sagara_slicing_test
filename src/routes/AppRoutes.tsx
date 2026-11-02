@@ -3,7 +3,6 @@ import AppLayout from '../layout/AppLayout';
 import ProtectedOutlet from './ProtectedOutlet';
 import NotFound from '@/pages/OtherPage/NotFound';
 import ReferenceUiPage from '@/pages/ReferenceUiPage';
-import { KaryawanPage } from '@/features/karyawan';
 import { LandingPage, ProductDetailPage, SearchPage } from '@/features/landing';
 import { SignInPage, SignUpPage, VerifyOtpPage, ResetPasswordPage } from '@/features/auth';
 
@@ -14,7 +13,6 @@ export default function AppRoutes() {
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/verify-otp" element={<VerifyOtpPage />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />
-      <Route path="/karyawan-demo" element={<KaryawanPage />} />
       <Route path="/search" element={<SearchPage />} />
       <Route path="/product/:id" element={<ProductDetailPage />} />
       <Route path="/" element={<LandingPage />} />

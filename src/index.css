@@ -844,11 +844,7 @@ span.flatpickr-weekday,
   text-align: center;
 }
 
-h1:not(.text-white), 
-h2:not(.text-white), 
-h3:not(.text-white), 
-h4:not(.text-white), 
-h5:not(.text-white) { 
+:is(h1, h2, h3, h4, h5):not(.text-white, .text-brand) { 
     color: #3D3D3D; 
 }
 

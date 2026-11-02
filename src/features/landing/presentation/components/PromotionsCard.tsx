@@ -6,7 +6,7 @@ interface PromotionsCardProps {
 
 export const PromotionsCard: React.FC<PromotionsCardProps> = ({ title, description, imageSrc }) => {
   return (
-    <div className="group cursor-pointer border border-gray-100 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow transition h-full">
+    <div className="group cursor-pointer rounded-lg overflow-hidden bg-white shadow-sm hover:shadow transition h-full">
       <div className="h-[200px] overflow-hidden mb-4 rounded-t-lg relative">
         <img
           src={imageSrc}
