@@ -1,59 +1,11 @@
 import { FaqItem } from "./FaqItem";
+import { LandingContent } from "../../domain/entities/LandingContent";
 
-export const FaqSection: React.FC = () => {
-  const faqItems = [
-    {
-      question: "What types of office spaces does CEO SUITE offer?",
-      answer:
-        "We provide a variety of office spaces including private offices, co-working spaces, meeting rooms, and virtual offices. Whether you need a dedicated workspace or flexible hot-desking options, we have a solution to fit your needs.",
-    },
-    {
-      question: "What amenities are included with a CEO SUITE membership?",
-      answer:
-        "Full-speed Wi-Fi, 24/7 access, premium meeting rooms, business-class printing, reception services, and more.",
-    },
-    {
-      question: "Can I customize my office space?",
-      answer:
-        "Yes, you can personalize your space with your own furniture and equipment while maintaining our professional infrastructure.",
-    },
-    {
-      question: "How do I book meeting rooms?",
-      answer:
-        "Book through our app, website, or by contacting our reception team. Instant confirmation is available 24/7.",
-    },
-    {
-      question: "Are there any additional costs for using meeting rooms or other facilities?",
-      answer:
-        "Standard meeting rooms are available at competitive hourly rates with no hidden fees. Additional premium services may have extra charges.",
-    },
-    {
-      question: "What is included in the administrative support services?",
-      answer:
-        "Mail handling, phone answering, mail merging, and basic administrative assistance from our professional staff.",
-    },
-    {
-      question: "How can I access CEO SUITE's high-speed internet?",
-      answer:
-        "Premium Wi-Fi is included in all spaces with secure login credentials provided upon check-in.",
-    },
-    {
-      question: "Can I use CEO SUITE's facilities for events?",
-      answer:
-        "Yes, our event spaces are available for corporate events, team building activities, and private functions with special rates.",
-    },
-    {
-      question: "What are the operating hours for CEO SUITE locations?",
-      answer:
-        "Most locations are open 24/7 for members with 24/7 access. Some common areas have standard business hours.",
-    },
-    {
-      question: "How can I contact CEO SUITE for more information or support?",
-      answer:
-        "Contact our support team 24/7 via email, phone, or through our mobile app chat support.",
-    },
-  ];
+interface FaqSectionProps {
+  items: LandingContent["faqItems"];
+}
 
+export const FaqSection: React.FC<FaqSectionProps> = ({ items }) => {
   const handleContact = () => {
     console.log("Contact clicked");
   };
@@ -94,8 +46,8 @@ export const FaqSection: React.FC = () => {
 
         <div className="lg:col-span-2">
           <div className="space-y-0">
-            {faqItems.map((item, index) => (
-              <FaqItem key={index} question={item.question} answer={item.answer} />
+            {items.map((item) => (
+              <FaqItem key={item.question} question={item.question} answer={item.answer} />
             ))}
           </div>
         </div>

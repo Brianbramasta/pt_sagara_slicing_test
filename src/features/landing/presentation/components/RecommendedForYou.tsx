@@ -1,61 +1,12 @@
 import { Link } from "react-router-dom";
 import { RecommendedSpacesCard } from "./RecommendedSpacesCard";
-import { IconMeetingRoom } from "@/icons/components/icons/IconMeetingRoom";
-import { IconPrivateOffice } from "@/icons/components/icons/IconPrivateOffice";
-import { IconCoworking } from "@/icons/components/icons/IconCoworking";
+import { LandingContent } from "../../domain/entities/LandingContent";
 
-export const RecommendedForYou: React.FC = () => {
-  const spaces = [
-    {
-      title: "AXA Tower Meeting Room",
-      type: "Meeting Room",
-      typeColor: "brand",
-      icon: <IconMeetingRoom />,
-      people: 4,
-      pricePeriod: "Daily",
-      price: "Rp2,880,000",
-      priceDiscount: "Rp2,400,000",
-      hourlyPrice: "Rp400,000",
-      hasDiscount: true,
-      imageSrc: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80",
-      productId: "1",
-    },
-    {
-      title: "Wisma GKBI Boardroom",
-      type: "Meeting Room",
-      typeColor: "brand",
-      icon: <IconMeetingRoom />,
-      people: 4,
-      pricePeriod: "Daily",
-      price: "Rp1,200,000",
-      imageSrc: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80",
-      productId: "1",
-    },
-    {
-      title: "Suite 7 View",
-      type: "Office",
-      typeColor: "blue-500",
-      icon: <IconPrivateOffice />,
-      people: 3,
-      pricePeriod: "Daily",
-      price: "Rp3,480,000",
-      hourlyPrice: "Rp400,000",
-      imageSrc: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&q=80",
-      productId: "1",
-    },
-    {
-      title: "Suite VIP 5 Non View",
-      type: "Co-Working Space (Dedicated)",
-      typeColor: "green-500",
-      icon: <IconCoworking />,
-      people: 1,
-      pricePeriod: "Weekly",
-      price: "Rp750,000",
-      imageSrc: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80",
-      productId: "1",
-    },
-  ];
+interface RecommendedForYouProps {
+  spaces: LandingContent["recommendedSpaces"];
+}
 
+export const RecommendedForYou: React.FC<RecommendedForYouProps> = ({ spaces }) => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="flex justify-between items-end mb-8">
@@ -68,7 +19,7 @@ export const RecommendedForYou: React.FC = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {spaces.map((space, index) => (
-          <Link key={index} to={`/product/${space.productId}`}>
+          <Link key={`${space.title}-${index}`} to={`/product/${space.productId}`}>
             <RecommendedSpacesCard {...space} />
           </Link>
         ))}

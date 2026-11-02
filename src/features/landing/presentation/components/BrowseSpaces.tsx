@@ -2,13 +2,19 @@ import { BrowseSpacesCard } from "./BrowseSpacesCard";
 import { IconPrivateOffice } from "@/icons/components/icons/IconPrivateOffice";
 import { IconCoworking } from "@/icons/components/icons/IconCoworking";
 import { IconMeetingRoom } from "@/icons/components/icons/IconMeetingRoom";
+import { LandingContent } from "../../domain/entities/LandingContent";
 
-export const BrowseSpaces: React.FC = () => {
-  const spaceTypes = [
-    { type: "Private Offices", imageSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80", colorClass: "bg-blue-500", icon: <IconPrivateOffice /> },
-    { type: "Coworking Space", imageSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80", colorClass: "bg-green-500", icon: <IconCoworking /> },
-    { type: "Meeting Room", imageSrc: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80", colorClass: "bg-brand", icon: <IconMeetingRoom /> },
-  ];
+interface BrowseSpacesProps {
+  spaces: LandingContent["browseSpaces"];
+}
+
+const spaceIcons: Record<string, React.ReactNode> = {
+  office: <IconPrivateOffice />,
+  coworking: <IconCoworking />,
+  "meeting-room": <IconMeetingRoom />,
+};
+
+export const BrowseSpaces: React.FC<BrowseSpacesProps> = ({ spaces }) => {
 
   const handleCheckAvailability = () => {
     console.log("Check availability clicked");
@@ -22,13 +28,13 @@ export const BrowseSpaces: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[300px]">
-        {spaceTypes.map((space, index) => (
+        {spaces.map((space) => (
           <BrowseSpacesCard
-            key={index}
+            key={space.type}
             imageSrc={space.imageSrc}
             type={space.type}
             colorClass={space.colorClass}
-            icon={space.icon}
+            icon={spaceIcons[space.icon] ?? null}
           />
         ))}
         <div className="bg-brand text-white flex flex-col justify-between overflow-hidden h-full relative shadow-2xl">

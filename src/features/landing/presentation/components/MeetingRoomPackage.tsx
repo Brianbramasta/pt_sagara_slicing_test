@@ -1,32 +1,29 @@
-export const MeetingRoomPackage: React.FC = () => {
+import { LandingContent } from "../../domain/entities/LandingContent";
+
+interface MeetingRoomPackageProps {
+  images: LandingContent["meetingRoomImages"];
+}
+
+export const MeetingRoomPackage: React.FC<MeetingRoomPackageProps> = ({ images }) => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div className="grid grid-cols-2 gap-4 ">
-          <div className="flex flex-col gap-4 pt-8">
-            <img
-              src="https://images.unsplash.com/photo-1503423571797-2d2bb372094a?auto=format&fit=crop&q=80"
-              alt="Meeting Room 1"
-              className="w-full h-1/2 object-cover rounded shadow-2xl shadow-red-500/20"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80"
-              alt="Meeting Room 2"
-              className="w-full h-1/2 object-cover rounded shadow-2xl shadow-red-500/20"
-            />
-          </div>
-          <div className="flex flex-col gap-4 pb-8">
-            <img
-              src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80"
-              alt="Meeting Room 3"
-              className="w-full h-1/2 object-cover rounded shadow-2xl shadow-red-500/20"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80"
-              alt="Meeting Room 4"
-              className="w-full h-1/2 object-cover rounded shadow-2xl shadow-red-500/20"
-            />
-          </div>
+          {[images.slice(0, 2), images.slice(2)].map((imageGroup, groupIndex) => (
+            <div
+              key={groupIndex}
+              className={`flex flex-col gap-4 ${groupIndex === 0 ? "pt-8" : "pb-8"}`}
+            >
+              {imageGroup.map((image) => (
+                <img
+                  key={image.alt}
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-1/2 object-cover rounded shadow-2xl shadow-red-500/20"
+                />
+              ))}
+            </div>
+          ))}
         </div>
 
         <div className="pr-4">

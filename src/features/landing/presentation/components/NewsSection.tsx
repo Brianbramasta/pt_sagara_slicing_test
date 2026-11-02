@@ -1,34 +1,13 @@
 import { NewsItem } from "./NewsItem";
 import { NewsHighlight } from "./NewsHighlight";
+import { LandingContent } from "../../domain/entities/LandingContent";
 
-export const NewsSection: React.FC = () => {
-  const newsItems = [
-    {
-      title: "Does productivity increase when working remotely?",
-      date: "Insights • 03 June 2023",
-      excerpt:
-        "NEW YORK - A 6-year-old horse died after being injured in a race at Belmont Park ahead of next week's...",
-      imageSrc:
-        "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Morning routine to boost your mood",
-      date: "Insights • 03 June 2023",
-      excerpt:
-        "NEW YORK - A 6-year-old horse died after being injured in a race at Belmont Park ahead of next week's...",
-      imageSrc:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80",
-    },
-    {
-      title: "5+ tips to find comfortable co-working space",
-      date: "Insights • 03 June 2023",
-      excerpt:
-        "NEW YORK - A 6-year-old horse died after being injured in a race at Belmont Park ahead of next week's...",
-      imageSrc:
-        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80",
-    },
-  ];
+interface NewsSectionProps {
+  items: LandingContent["newsItems"];
+  highlight: LandingContent["newsHighlight"];
+}
 
+export const NewsSection: React.FC<NewsSectionProps> = ({ items, highlight }) => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <h2 className="text-xl font-bold text-gray-900 mb-8">News, events and insights for you</h2>
@@ -36,8 +15,8 @@ export const NewsSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="flex flex-col justify-between">
           <div className="space-y-6">
-            {newsItems.map((item, index) => (
-              <NewsItem key={index} {...item} />
+            {items.map((item) => (
+              <NewsItem key={item.title} {...item} />
             ))}
           </div>
 
@@ -50,7 +29,7 @@ export const NewsSection: React.FC = () => {
           </div>
         </div>
 
-        <NewsHighlight />
+        <NewsHighlight highlight={highlight} />
       </div>
     </section>
   );

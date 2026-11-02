@@ -1,16 +1,22 @@
-export const MarqueeSection: React.FC = () => {
-  const logos = [
-    { name: "Uber", style: "text-4xl font-light" },
-    { name: "DELL", style: "text-3xl font-bold border-2 border-gray-300 rounded-full px-2 py-1" },
-    { name: "SAMSUNG", style: "text-2xl font-black" },
-    { name: "NIKE", style: "text-4xl font-bold italic" },
-    { name: "ETIHAD", style: "text-2xl font-serif" },
-    { name: "ZURICH", style: "text-2xl font-bold flex items-center gap-2" },
-    { name: "CISCO", style: "text-2xl font-black flex flex-col items-center leading-none" },
-    { name: "bp", style: "text-2xl font-bold" },
-    { name: "Exxon", style: "text-2xl font-bold" },
-  ];
+import { LandingContent } from "../../domain/entities/LandingContent";
 
+interface MarqueeSectionProps {
+  logos: LandingContent["customerLogos"];
+}
+
+const logoStyles: Record<string, string> = {
+  Uber: "text-4xl font-light",
+  DELL: "text-3xl font-bold border-2 border-gray-300 rounded-full px-2 py-1",
+  SAMSUNG: "text-2xl font-black",
+  NIKE: "text-4xl font-bold italic",
+  ETIHAD: "text-2xl font-serif",
+  ZURICH: "text-2xl font-bold flex items-center gap-2",
+  CISCO: "text-2xl font-black flex flex-col items-center leading-none",
+  bp: "text-2xl font-bold",
+  Exxon: "text-2xl font-bold",
+};
+
+export const MarqueeSection: React.FC<MarqueeSectionProps> = ({ logos }) => {
   return (
     <section className="w-full bg-gray-50/50 py-16 overflow-hidden border-t border-b border-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
@@ -28,8 +34,8 @@ export const MarqueeSection: React.FC = () => {
           className="flex animate-marquee whitespace-nowrap items-center min-w-full justify-around gap-16 pr-16 opacity-25"
           style={{ animation: "marquee 30s linear infinite" }}
         >
-          {logos.map((logo, index) => (
-            <div key={index} className={logo.style}>
+          {logos.map((logo) => (
+            <div key={logo.name} className={logoStyles[logo.name] ?? ""}>
               {logo.name === "CISCO" ? (
                 <span className="flex flex-col items-center leading-none">
                   <span className="text-xs mb-1">|||...|||</span>
@@ -47,8 +53,8 @@ export const MarqueeSection: React.FC = () => {
           aria-hidden="true"
           style={{ animation: "marquee 30s linear infinite" }}
         >
-          {logos.map((logo, index) => (
-            <div key={index} className={logo.style}>
+          {logos.map((logo) => (
+            <div key={logo.name} className={logoStyles[logo.name] ?? ""}>
               {logo.name === "CISCO" ? (
                 <span className="flex flex-col items-center leading-none">
                   <span className="text-xs mb-1">|||...|||</span>

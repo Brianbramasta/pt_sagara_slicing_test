@@ -1,24 +1,11 @@
 import { DealCard } from "./DealCard";
+import { LandingContent } from "../../domain/entities/LandingContent";
 
-export const BestDealsSection: React.FC = () => {
-  const deals = [
-    {
-      title: "Rp200,000 Voucher for Office!",
-      validUntil: "Valid until 31 August 2024",
-      imageSrc: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Rp200,000 Voucher for Office!",
-      validUntil: "Valid until 31 August 2024",
-      imageSrc: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Rp200,000 Voucher for Office!",
-      validUntil: "Valid until 31 August 2024",
-      imageSrc: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&q=80",
-    },
-  ];
+interface BestDealsSectionProps {
+  deals: LandingContent["deals"];
+}
 
+export const BestDealsSection: React.FC<BestDealsSectionProps> = ({ deals }) => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="flex justify-between items-end mb-6">

@@ -1,24 +1,11 @@
 import { PromotionsCard } from "./PromotionsCard";
+import { LandingContent } from "../../domain/entities/LandingContent";
 
-export const PromotionsSection: React.FC = () => {
-  const promotions = [
-    {
-      title: "Discount 20% for all co-working space booking!",
-      description: "Limited time offer. Don't miss out on this incredible deal.",
-      imageSrc: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Exclusive 30% discount on monthly co-working space subscriptions!",
-      description: "Limited time offer. Don't miss out on this incredible deal.",
-      imageSrc: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Special offer: Get 25% off any meeting room booking!",
-      description: "Don't miss out on this exclusive deal. Limited time only.",
-      imageSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80",
-    },
-  ];
+interface PromotionsSectionProps {
+  promotions: LandingContent["promotions"];
+}
 
+export const PromotionsSection: React.FC<PromotionsSectionProps> = ({ promotions }) => {
   const handleSeeAll = () => {
     console.log("See all promotions");
   };

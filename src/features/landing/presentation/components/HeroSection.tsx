@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { DropdownSelect, DateRangePicker, InputField, LocationIcon, LocationIconBrand } from "./shared";
 import { useIsAuthenticated } from "@/features/auth";
+import { LandingContent } from "../../domain/entities/LandingContent";
 
 interface SearchFormValues {
   city: string;
@@ -9,18 +10,14 @@ interface SearchFormValues {
   spaceType: string;
 }
 
-const spaceTypeOptions = [
-  { id: "all", label: "All Space", checked: true },
-  { id: "offices", label: "Offices" },
-  { id: "meeting", label: "Meeting Room" },
-  { id: "coworking", label: "Co-working Space" },
-  { id: "event", label: "Event Space" },
-];
+interface HeroSectionProps {
+  content: LandingContent["hero"];
+}
 
-export const HeroSection: React.FC = () => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ content }) => {
   const [searchValues, setSearchValues] = useState<SearchFormValues>({
-    city: "Jakarta",
-    date: { start: "Mon, 17 Agustus 2024", end: "Tue, 18 Agustus 2024" },
+    city: content.city,
+    date: content.date,
     spaceType: "All Space",
   });
   const navigate = useNavigate();
@@ -42,7 +39,7 @@ export const HeroSection: React.FC = () => {
     return (
       <section className="relative w-full h-[550px] flex items-center justify-center">
         <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+          src={content.imageSrc}
           alt="Premium Workspace"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -91,7 +88,7 @@ export const HeroSection: React.FC = () => {
                 <div>
                 <label className="block text-[13px] text-gray-700 mb-2">Select Location</label>
                 <InputField
-                  value="Jakarta, Wisma GKBI"
+                  value={content.authenticatedLocation}
                   icon={<LocationIconBrand />}
                   readOnly
                 />
@@ -100,13 +97,13 @@ export const HeroSection: React.FC = () => {
                   <DropdownSelect
                     label="Space Type"
                     defaultValue="All Space"
-                    options={spaceTypeOptions}
+                    options={content.spaceTypeOptions}
                   />
                 </div>
               <div>
                 <label className="block text-[13px] text-gray-700 mb-2">Select Date</label>
                 <DateRangePicker
-                  value="Mon, 17 August 2024 - Tue, 18 August 2024"
+                  value={content.authenticatedDate}
                   // readOnly
                 />
               </div>
@@ -141,7 +138,7 @@ export const HeroSection: React.FC = () => {
       <div className="relative w-full">
         <div className="w-full md:w-3/4 ml-auto h-[450px]">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+            src={content.imageSrc}
             alt="Office Space"
             className="w-full h-full object-cover rounded"
           />
@@ -168,7 +165,7 @@ export const HeroSection: React.FC = () => {
               <DropdownSelect
                 label="Space Type"
                 defaultValue="All Space"
-                options={spaceTypeOptions}
+                options={content.spaceTypeOptions}
                 onChange={handleSpaceTypeChange}
               />
             </div>
