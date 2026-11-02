@@ -30,7 +30,7 @@ export const AllSpacesSection: React.FC = () => {
       )}
 
       <div className="flex justify-center mt-8">
-        <button className="bg-brand hover:bg-red-900 text-white text-xs font-semibold px-8 py-2.5 rounded-xl shadow transition">
+        <button className="bg-brand hover:bg-red-900 text-white text-xs font-semibold px-8 py-2.5 rounded-lg shadow transition">
           See More
         </button>
       </div>
