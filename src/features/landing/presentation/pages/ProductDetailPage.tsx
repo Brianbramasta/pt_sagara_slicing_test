@@ -58,6 +58,7 @@ export const ProductDetailPage: React.FC = () => {
     <LandingLayout>
       
       <div className="bg-brand py-6 w-full">
+        {/* select tanggal */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2 lg:col-span-1">
@@ -89,6 +90,7 @@ export const ProductDetailPage: React.FC = () => {
               <ProductHeader product={product} />
               <PriceSection product={product} />
               <div className="w-full h-px bg-gray-200/60 my-5"></div>
+              {/* details */}
               <div className="">
                 <h2 className="text-lg font-bold text-gray-900 mb-4">Details</h2>
                 <p className="text-sm text-gray-500 mb-6">Meeting room with South Jakarta view, with fully amneties and fullboard facilities.</p>
@@ -96,7 +98,6 @@ export const ProductDetailPage: React.FC = () => {
               </div>
               <AddOnsSection addOns={product.addOns} />
             </div>
-            
             <BookingCard productName={product.title} />
             
           </div>
@@ -105,14 +106,9 @@ export const ProductDetailPage: React.FC = () => {
             <LocationSection product={product} />
           </div>
           <div className="col-span-3">
-
             <SimilarSpacesSection similarSpaces={product.similarSpaces} />
           </div>
-            
-            
-         
 
-          
         </div>
       </main>
     </LandingLayout>
