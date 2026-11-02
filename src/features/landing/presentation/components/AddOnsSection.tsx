@@ -1,5 +1,5 @@
 import { AddOn } from "../../domain/entities/Product";
-import { IconCube } from "./Icons";
+import { IconCube } from "./icons/Icons";
 
 interface AddOnsSectionProps {
   addOns: AddOn[];

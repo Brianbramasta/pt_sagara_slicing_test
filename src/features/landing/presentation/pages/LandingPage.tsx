@@ -63,24 +63,24 @@ export const LandingPage: React.FC = () => {
         </>
       ):(
         <>
-        <AnimatedSection delay={200}>
-          <BrowseSpaces spaces={content.browseSpaces} />
-        </AnimatedSection>
-        <AnimatedSection delay={300}>
-            <RecommendedForYou spaces={content.recommendedSpaces} />
-          </AnimatedSection>
+      <AnimatedSection delay={200}>
+        <BrowseSpaces spaces={content.browseSpaces} />
+      </AnimatedSection>
+      <AnimatedSection delay={300}>
+        <RecommendedForYou spaces={content.recommendedSpaces} />
+      </AnimatedSection>
       
       <AnimatedSection delay={400}>
         <StatsSection stats={content.stats} />
       </AnimatedSection>
 
-          <AnimatedSection delay={500}>
-            <PromotionsSection promotions={content.promotions} />
-          </AnimatedSection>
+      <AnimatedSection delay={500}>
+        <PromotionsSection promotions={content.promotions} />
+      </AnimatedSection>
 
-          <AnimatedSection delay={600}>
-            <BestDealsSection deals={content.deals} />
-          </AnimatedSection>
+      <AnimatedSection delay={600}>
+        <BestDealsSection deals={content.deals} />
+      </AnimatedSection>
       
       <AnimatedSection delay={700}>
         <MeetingRoomPackage images={content.meetingRoomImages} />

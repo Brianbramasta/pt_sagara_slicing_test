@@ -17,9 +17,6 @@ export const BookingCard: React.FC<BookingCardProps> = ({ productName }) => {
     <div className="lg:col-span-1">
       <div className="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 p-6 sticky top-8">
         <p className="text-gray-500 text-sm mb-4">Select date to Book</p>
-
-      
-
         <button
           onClick={handleBookClick}
           disabled={!selectedDate}

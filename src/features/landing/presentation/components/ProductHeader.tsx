@@ -1,5 +1,5 @@
 import { Product } from "../../domain/entities/Product";
-import { IconStar, IconLocation, IconPerson, IconCube,IconTable } from "./Icons";
+import { IconStar, IconLocation, IconPerson, IconCube,IconTable } from "./icons/Icons";
 import { IconMeetingRoom } from "@/icons/components/icons/IconMeetingRoom";
 
 interface ProductHeaderProps {

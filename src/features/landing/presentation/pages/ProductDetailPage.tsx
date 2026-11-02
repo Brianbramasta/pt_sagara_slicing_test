@@ -9,8 +9,7 @@ import { BookingCard } from "../components/BookingCard";
 import { AddOnsSection } from "../components/AddOnsSection";
 import { LocationSection } from "../components/LocationSection";
 import { SimilarSpacesSection } from "../components/SimilarSpacesSection";
-import { DateRangePicker } from "../components/shared/DateRangePicker";
-import { TimePicker } from "../components/shared/TimePicker";
+import { SearchSection } from "../components/SearchSection";
 
 export const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -59,25 +58,7 @@ export const ProductDetailPage: React.FC = () => {
       
       <div className="bg-brand py-6 w-full">
         {/* select tanggal */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="col-span-2 lg:col-span-1">
-              <label className="text-white font-regular mb-1 block">Select Date</label>
-              <DateRangePicker 
-                value={selectedDate} 
-                onChange={(range) => setSelectedDate(range.start)}
-              />
-            </div>
-            {selectedDate && (
-              <div className="col-span-2 lg:col-span-1">
-                <TimePicker 
-                  selectedTime={selectedTime}
-                  onSelect={setSelectedTime}
-                />
-              </div>
-            )}
-          </div>
-        </div>
+        <SearchSection selectedDate={selectedDate} setSelectedDate={setSelectedDate} selectedTime={selectedTime} setSelectedTime={setSelectedTime} />
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">

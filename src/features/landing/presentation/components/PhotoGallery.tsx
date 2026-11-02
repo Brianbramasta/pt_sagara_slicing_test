@@ -1,5 +1,5 @@
 import { ProductImage } from "../../domain/entities/Product";
-import { IconShowAllPhotos } from "./Icons";
+import { IconShowAllPhotos } from "./icons/Icons";
 
 interface PhotoGalleryProps {
   images: ProductImage[];
